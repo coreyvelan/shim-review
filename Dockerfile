@@ -1,21 +1,20 @@
-FROM debian:buster
+FROM debian:bookworm-slim
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -y -qq update
-RUN apt-get -y -qq install build-essential git gnu-efi libpopt-dev libefivar-dev uuid-dev bsdmainutils 
+RUN apt-get -y -qq install build-essential git gnu-efi libpopt-dev libefivar-dev uuid-dev bsdmainutils efitools efibootmgr libelf-dev
 WORKDIR /build
 RUN git clone https://github.com/rhboot/shim.git
 WORKDIR /build/shim
-RUN git checkout a4a1fbe728c9545fc5647129df0cf1593b953bec
+RUN git checkout 505cdb678b319fcf9a7fdee77c0f091b4147cbe5
 COPY fixmestick-codesigning.cer /build/shim
 RUN mkdir /build/target/
-RUN mkdir /usr/lib/gnuefi/
-RUN mkdir -p /usr/lib32/gnuefi/
-RUN ln -s /usr/lib/crt0-efi-x86_64.o /usr/lib/gnuefi/crt0-efi-x86_64.o
-RUN ln -s /usr/lib32/crt0-efi-ia32.o /usr/lib32/gnuefi/crt0-efi-ia32.o
-RUN make VENDOR_CERT_FILE=fixmestick-codesigning.cer LIBDIR=/usr/lib
+RUN make update
+RUN make VENDOR_CERT_FILE=fixmestick-codesigning.cer  LIBDIR=/usr/lib 
 RUN mv shimx64.efi /build/target/
-RUN make clean ; exit 0
-RUN setarch linux32 make ARCH=ia32 VENDOR_CERT_FILE=fixmestick-codesigning.cer LIBDIR=/usr/lib32 
+RUN make clean
+RUN setarch linux32 make ARCH=ia32 VENDOR_CERT_FILE=fixmestick-codesigning.cer
 RUN mv shimia32.efi /build/target/
 RUN sha256sum /build/target/*
 RUN hexdump -Cv /build/target/shimx64.efi > /build/target/builtx64
