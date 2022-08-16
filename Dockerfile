@@ -27,5 +27,3 @@ RUN hexdump -Cv /build/shim-review/shimia32.efi > origia32
 
 RUN diff -u origx64 /build/target/builtx64
 RUN diff -u origia32 /build/target/builtia32
-
-
