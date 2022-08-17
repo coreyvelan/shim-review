@@ -16,7 +16,6 @@ COPY fixmestick-codesigning.cer /build/shim
 COPY sbat.fixmestick.csv /build/shim/data 
 
 RUN mkdir /build/target/
-ENV ENABLE_SHIM_CERT=1
 ENV VENDOR_CERT_FILE=fixmestick-codesigning.cer
 RUN make LIBDIR=/usr/lib 
 RUN mv shimx64.efi /build/target/
