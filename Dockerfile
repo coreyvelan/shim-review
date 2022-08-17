@@ -5,8 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y -qq update
 RUN apt-get -y -qq install build-essential git gnu-efi libpopt-dev libefivar-dev uuid-dev bsdmainutils wget efitools efibootmgr libelf-dev dos2unix libnss3-tools pesign
 WORKDIR /build
-RUN git clone https://github.com/coreyvelan/shim-review.git
-RUN git checkout fixmestick-shim-ia32-x64-20220817
+RUN git clone -b fixmestick-shim-ia32-x64-20220817 https://github.com/coreyvelan/shim-review.git
 
 RUN wget https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
 RUN tar -xvjf shim-15.6.tar.bz2
