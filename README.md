@@ -58,7 +58,7 @@ Yes- they were created from https://github.com/rhboot/shim/releases/download/15.
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/coreyvelan/shim-review
+https://github.com/coreyvelan/shim-review/tree/fixmestick-shim-ia32-x64-20220817
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
@@ -146,8 +146,8 @@ n/a
 -------------------------------------------------------------------------------
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
-???  shimia32.efi
-???  shimx64.efi
+9fc2cc4c596a1cf42e68e8ec70199dada7ca568a59f7567283f4e1975bd86d44  shimia32.efi
+0b29eb3574fe540f5bb87358226d380fa6f80a59382cc072365e59c0670b90b1  shimx64.efi
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
