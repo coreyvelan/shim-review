@@ -24,11 +24,6 @@ RUN make clean
 RUN setarch linux32 make ARCH=ia32
 RUN mv shimia32.efi /build/target/
 
-RUN objcopy -j .sbat -O binary /build/target/shimia32.efi /build/target/shimia32.sbat  
-RUN cat /build/target/shimia32.sbat  
-RUN objcopy -j .sbat -O binary /build/target/shimx64.efi /build/target/shimx64.sbat  
-RUN cat /build/target/shimx64.sbat
-
 RUN sha256sum /build/target/*
 RUN hexdump -Cv /build/target/shimx64.efi > /build/target/builtx64
 RUN hexdump -Cv /build/target/shimia32.efi > /build/target/builtia32
@@ -38,3 +33,8 @@ RUN hexdump -Cv /build/shim-review/shimia32.efi > origia32
 
 RUN diff -u origx64 /build/target/builtx64
 RUN diff -u origia32 /build/target/builtia32
+
+RUN objcopy -j .sbat -O binary /build/target/shimia32.efi /build/target/shimia32.sbat  
+RUN objcopy -j .sbat -O binary /build/target/shimx64.efi /build/target/shimx64.sbat  
+RUN cat /build/target/shimia32.sbat  
+RUN cat /build/target/shimx64.sbat
