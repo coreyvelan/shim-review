@@ -165,15 +165,19 @@ Yes
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
 Shim:
+```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
 shim.fixmestick,1,FixMeStick Technologies Inc.,shim,15.6,mail:security@fixmestick.com
+```
 
 GRUB:
+```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md 
 grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/ 
 grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
 grub.fixmestick,1,FixMeStick Technologies Inc.,grub2,2.06-3,mail:security@fixmestick.com
+```
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
