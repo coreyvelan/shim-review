@@ -28,7 +28,7 @@ FixMeStick Virus Removal Device (https://www.fixmestick.com/fixmestick/)
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it:
 -------------------------------------------------------------------------------
-FixMeStick wants to employ Secure Boot for building a trusted operating system from Shim to GRUB to the kernel to kernel modules. FixMeStick is a bootable linux OS that mounts local drives, and then scans and removes malware.  The product uses signed drivers and as such needs a signed shim to allow users to keep Secure Boot on.
+FixMeStick wants to employ Secure Boot for building a trusted operating system from Shim to GRUB to the kernel to kernel modules. FixMeStick is a bootable linux OS that mounts local drives, and then scans and removes malware.  The product uses custom drivers and as such needs a signed shim with our certificate such that we can sign the drivers to allow users to keep Secure Boot on.
 
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.
