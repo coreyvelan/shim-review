@@ -58,7 +58,7 @@ Yes- they were created from https://github.com/rhboot/shim/releases/download/15.
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/coreyvelan/shim-review/tree/fixmestick-shim-ia32-x64-20220817
+https://github.com/coreyvelan/shim-review/tree/fixmestick-shim-ia32-x64-20220908
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
@@ -68,7 +68,7 @@ None
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 -------------------------------------------------------------------------------
-We use debian's implementation of GRUB2 - latest from bullseye (2.04-20)
+We use debian's implementation of GRUB2 - latest from bookworm (2.06-3)
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
@@ -187,7 +187,7 @@ all_video boot btrfs cat chain configfile cpuid cryptodisk echo efifwsetup efine
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-We use the lastest version from debian bullseye (2.06-3~deb11u1). It is derived from the upstream 2.06 release with a number of patches applied - see debian/patches there.
+We use the lastest version from debian bookworm (2.06-3). It is derived from the upstream 2.06 release with a number of patches applied - see debian/patches there.
 
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
