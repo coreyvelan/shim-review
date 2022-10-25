@@ -53,12 +53,14 @@ Please create your shim binaries starting with the 15.6 shim release tar file: h
 This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the appropriate gnu-efi source.
 
 -------------------------------------------------------------------------------
-Yes- they were created from https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
+Yes- they were created from this commit:
+https://github.com/rhboot/shim/commit/5c537b3d0cf8c393dad2e61d49aade68f3af1401
+The reason it is built from that commit instead of https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2 is because 15.6 has this issue https://github.com/rhboot/shim/issues/498 which is impacting our customers and was fixed by that commit.
 
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/coreyvelan/shim-review/tree/fixmestick-shim-ia32-x64-20220908
+https://github.com/coreyvelan/shim-review/tree/fixmestick-shim-ia32-x64-20221025
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
@@ -168,7 +170,7 @@ Shim:
 ```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.fixmestick,1,FixMeStick Technologies Inc.,shim,15.6,mail:security@fixmestick.com
+shim.fixmestick,1,FixMeStick Technologies Inc.,shim,15.6-1,mail:security@fixmestick.com
 ```
 
 GRUB:
