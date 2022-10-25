@@ -5,8 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y -qq update
 RUN apt-get -y -qq install build-essential git gnu-efi libpopt-dev libefivar-dev uuid-dev bsdmainutils wget efitools efibootmgr libelf-dev dos2unix libnss3-tools pesign
 WORKDIR /build
-#RUN git clone -b fixmestick-shim-ia32-x64-20220817 https://github.com/coreyvelan/shim-review.git
-RUN git clone https://github.com/coreyvelan/shim-review.git
+RUN git clone -b fixmestick-shim-ia32-x64-20221025 https://github.com/coreyvelan/shim-review.git
 
 RUN git clone https://github.com/rhboot/shim.git
 WORKDIR /build/shim

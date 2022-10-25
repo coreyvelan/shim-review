@@ -1,126 +1,73 @@
-Sending build context to Docker daemon  4.786MB
-Step 1/30 : FROM debian:bookworm-slim
- ---> 8058bf3e8b8c
+Sending build context to Docker daemon  6.766MB
+Step 1/30 : FROM debian:bookworm-20221024-slim
+ ---> 3b6788f3b4bf
 Step 2/30 : ENV DEBIAN_FRONTEND=noninteractive
- ---> Running in bcda21a00475
-Removing intermediate container bcda21a00475
- ---> 51d1b0ee11f1
+ ---> Running in 4d756cb3a962
+Removing intermediate container 4d756cb3a962
+ ---> 8fa01e969c4e
 Step 3/30 : RUN apt-get -y -qq update
- ---> Running in 1d155490c135
-Removing intermediate container 1d155490c135
- ---> 5f1d8608924e
+ ---> Running in c15767adfea2
+Removing intermediate container c15767adfea2
+ ---> 02962a9bf8e2
 Step 4/30 : RUN apt-get -y -qq install build-essential git gnu-efi libpopt-dev libefivar-dev uuid-dev bsdmainutils wget efitools efibootmgr libelf-dev dos2unix libnss3-tools pesign
- ---> Running in 70b16d169625
+ ---> Running in a37943eb2114
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0m(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6618 files and directories currently installed.)
-Preparing to unpack .../bsdutils_1%3a2.38.1-1_amd64.deb ...
-Unpacking bsdutils (1:2.38.1-1) over (1:2.38-6) ...
-Setting up bsdutils (1:2.38.1-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6618 files and directories currently installed.)
-Preparing to unpack .../libc6_2.34-3_amd64.deb ...
-Checking for services that may need to be restarted...
-Checking init scripts...
-Unpacking libc6:amd64 (2.34-3) over (2.33-8) ...
-Setting up libc6:amd64 (2.34-3) ...
-Checking for services that may need to be restarted...
-Checking init scripts...
-Nothing to restart.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6604 files and directories currently installed.)
-Preparing to unpack .../libc-bin_2.34-3_amd64.deb ...
-Unpacking libc-bin (2.34-3) over (2.33-8) ...
-Setting up libc-bin (2.34-3) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6604 files and directories currently installed.)
-Preparing to unpack .../gcc-12-base_12.1.0-8_amd64.deb ...
-Unpacking gcc-12-base:amd64 (12.1.0-8) over (12.1.0-7) ...
-Setting up gcc-12-base:amd64 (12.1.0-8) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6604 files and directories currently installed.)
-Preparing to unpack .../libgcc-s1_12.1.0-8_amd64.deb ...
-Unpacking libgcc-s1:amd64 (12.1.0-8) over (12.1.0-7) ...
-Setting up libgcc-s1:amd64 (12.1.0-8) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6604 files and directories currently installed.)
-Preparing to unpack .../libstdc++6_12.1.0-8_amd64.deb ...
-Unpacking libstdc++6:amd64 (12.1.0-8) over (12.1.0-7) ...
-Setting up libstdc++6:amd64 (12.1.0-8) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6604 files and directories currently installed.)
-Preparing to unpack .../libsmartcols1_2.38.1-1_amd64.deb ...
-Unpacking libsmartcols1:amd64 (2.38.1-1) over (2.38-6) ...
-Setting up libsmartcols1:amd64 (2.38.1-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6604 files and directories currently installed.)
-Preparing to unpack .../util-linux-extra_2.38.1-1_amd64.deb ...
-Unpacking util-linux-extra (2.38.1-1) over (2.38-6) ...
-Setting up util-linux-extra (2.38.1-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6604 files and directories currently installed.)
-Preparing to unpack .../util-linux_2.38.1-1_amd64.deb ...
-Unpacking util-linux (2.38.1-1) over (2.38-6) ...
-Setting up util-linux (2.38.1-1) ...
-update-alternatives: warning: forcing reinstallation of alternative /bin/more because link group pager is broken
-update-alternatives: warning: skip creation of /usr/share/man/man1/pager.1.gz because associated file /usr/share/man/man1/more.1.gz (of link group pager) doesn't exist
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6605 files and directories currently installed.)
-Preparing to unpack .../00-mount_2.38.1-1_amd64.deb ...
-Unpacking mount (2.38.1-1) over (2.38-6) ...
-Selecting previously unselected package perl-modules-5.34.
-Preparing to unpack .../01-perl-modules-5.34_5.34.0-5_all.deb ...
+[0mSelecting previously unselected package perl-modules-5.34.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6647 files and directories currently installed.)
+Preparing to unpack .../00-perl-modules-5.34_5.34.0-5_all.deb ...
 Unpacking perl-modules-5.34 (5.34.0-5) ...
 Selecting previously unselected package libgdbm6:amd64.
-Preparing to unpack .../02-libgdbm6_1.23-1_amd64.deb ...
-Unpacking libgdbm6:amd64 (1.23-1) ...
+Preparing to unpack .../01-libgdbm6_1.23-3_amd64.deb ...
+Unpacking libgdbm6:amd64 (1.23-3) ...
 Selecting previously unselected package libgdbm-compat4:amd64.
-Preparing to unpack .../03-libgdbm-compat4_1.23-1_amd64.deb ...
-Unpacking libgdbm-compat4:amd64 (1.23-1) ...
+Preparing to unpack .../02-libgdbm-compat4_1.23-3_amd64.deb ...
+Unpacking libgdbm-compat4:amd64 (1.23-3) ...
 Selecting previously unselected package libperl5.34:amd64.
-Preparing to unpack .../04-libperl5.34_5.34.0-5_amd64.deb ...
+Preparing to unpack .../03-libperl5.34_5.34.0-5_amd64.deb ...
 Unpacking libperl5.34:amd64 (5.34.0-5) ...
 Selecting previously unselected package perl.
-Preparing to unpack .../05-perl_5.34.0-5_amd64.deb ...
+Preparing to unpack .../04-perl_5.34.0-5_amd64.deb ...
 Unpacking perl (5.34.0-5) ...
 Selecting previously unselected package liblocale-gettext-perl.
-Preparing to unpack .../06-liblocale-gettext-perl_1.07-4+b2_amd64.deb ...
+Preparing to unpack .../05-liblocale-gettext-perl_1.07-4+b2_amd64.deb ...
 Unpacking liblocale-gettext-perl (1.07-4+b2) ...
 Selecting previously unselected package libusb-1.0-0:amd64.
-Preparing to unpack .../07-libusb-1.0-0_2%3a1.0.26-1_amd64.deb ...
+Preparing to unpack .../06-libusb-1.0-0_2%3a1.0.26-1_amd64.deb ...
 Unpacking libusb-1.0-0:amd64 (2:1.0.26-1) ...
 Selecting previously unselected package libccid.
-Preparing to unpack .../08-libccid_1.5.0-2_amd64.deb ...
+Preparing to unpack .../07-libccid_1.5.0-2_amd64.deb ...
 Unpacking libccid (1.5.0-2) ...
 Selecting previously unselected package libpcsclite1:amd64.
-Preparing to unpack .../09-libpcsclite1_1.9.8-1_amd64.deb ...
-Unpacking libpcsclite1:amd64 (1.9.8-1) ...
+Preparing to unpack .../08-libpcsclite1_1.9.9-1_amd64.deb ...
+Unpacking libpcsclite1:amd64 (1.9.9-1) ...
 Selecting previously unselected package pcscd.
-Preparing to unpack .../10-pcscd_1.9.8-1_amd64.deb ...
-Unpacking pcscd (1.9.8-1) ...
-Preparing to unpack .../11-libblkid1_2.38.1-1_amd64.deb ...
-Unpacking libblkid1:amd64 (2.38.1-1) over (2.38-6) ...
-Setting up libblkid1:amd64 (2.38.1-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8648 files and directories currently installed.)
-Preparing to unpack .../libmount1_2.38.1-1_amd64.deb ...
-Unpacking libmount1:amd64 (2.38.1-1) over (2.38-6) ...
-Setting up libmount1:amd64 (2.38.1-1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8648 files and directories currently installed.)
-Preparing to unpack .../libuuid1_2.38.1-1_amd64.deb ...
-Unpacking libuuid1:amd64 (2.38.1-1) over (2.38-6) ...
-Setting up libuuid1:amd64 (2.38.1-1) ...
+Preparing to unpack .../09-pcscd_1.9.9-1_amd64.deb ...
+Unpacking pcscd (1.9.9-1) ...
+Preparing to unpack .../10-gpgv_2.2.40-1_amd64.deb ...
+Unpacking gpgv (2.2.40-1) over (2.2.39-1+b1) ...
+Setting up gpgv (2.2.40-1) ...
 Selecting previously unselected package less.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8648 files and directories currently installed.)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 8687 files and directories currently installed.)
 Preparing to unpack .../000-less_590-1_amd64.deb ...
 Unpacking less (590-1) ...
 Selecting previously unselected package netbase.
-Preparing to unpack .../001-netbase_6.3_all.deb ...
-Unpacking netbase (6.3) ...
+Preparing to unpack .../001-netbase_6.4_all.deb ...
+Unpacking netbase (6.4) ...
 Selecting previously unselected package readline-common.
-Preparing to unpack .../002-readline-common_8.1.2-1.2_all.deb ...
-Unpacking readline-common (8.1.2-1.2) ...
+Preparing to unpack .../002-readline-common_8.2-1_all.deb ...
+Unpacking readline-common (8.2-1) ...
 Selecting previously unselected package sensible-utils.
 Preparing to unpack .../003-sensible-utils_0.0.17_all.deb ...
 Unpacking sensible-utils (0.0.17) ...
 Selecting previously unselected package bzip2.
-Preparing to unpack .../004-bzip2_1.0.8-5_amd64.deb ...
-Unpacking bzip2 (1.0.8-5) ...
+Preparing to unpack .../004-bzip2_1.0.8-5+b1_amd64.deb ...
+Unpacking bzip2 (1.0.8-5+b1) ...
 Selecting previously unselected package libssl3:amd64.
-Preparing to unpack .../005-libssl3_3.0.5-2_amd64.deb ...
-Unpacking libssl3:amd64 (3.0.5-2) ...
+Preparing to unpack .../005-libssl3_3.0.5-4_amd64.deb ...
+Unpacking libssl3:amd64 (3.0.5-4) ...
 Selecting previously unselected package openssl.
-Preparing to unpack .../006-openssl_3.0.5-2_amd64.deb ...
-Unpacking openssl (3.0.5-2) ...
+Preparing to unpack .../006-openssl_3.0.5-4_amd64.deb ...
+Unpacking openssl (3.0.5-4) ...
 Selecting previously unselected package ca-certificates.
 Preparing to unpack .../007-ca-certificates_20211016_all.deb ...
 Unpacking ca-certificates (20211016) ...
@@ -134,35 +81,35 @@ Selecting previously unselected package libmd0:amd64.
 Preparing to unpack .../010-libmd0_1.0.4-2_amd64.deb ...
 Unpacking libmd0:amd64 (1.0.4-2) ...
 Selecting previously unselected package libbsd0:amd64.
-Preparing to unpack .../011-libbsd0_0.11.6-1_amd64.deb ...
-Unpacking libbsd0:amd64 (0.11.6-1) ...
+Preparing to unpack .../011-libbsd0_0.11.7-1_amd64.deb ...
+Unpacking libbsd0:amd64 (0.11.7-1) ...
 Selecting previously unselected package libedit2:amd64.
-Preparing to unpack .../012-libedit2_3.1-20210910-1_amd64.deb ...
-Unpacking libedit2:amd64 (3.1-20210910-1) ...
+Preparing to unpack .../012-libedit2_3.1-20221009-1_amd64.deb ...
+Unpacking libedit2:amd64 (3.1-20221009-1) ...
 Selecting previously unselected package libcbor0.8:amd64.
-Preparing to unpack .../013-libcbor0.8_0.8.0-2_amd64.deb ...
-Unpacking libcbor0.8:amd64 (0.8.0-2) ...
+Preparing to unpack .../013-libcbor0.8_0.8.0-2+b1_amd64.deb ...
+Unpacking libcbor0.8:amd64 (0.8.0-2+b1) ...
 Selecting previously unselected package libfido2-1:amd64.
-Preparing to unpack .../014-libfido2-1_1.11.0-1+b1_amd64.deb ...
-Unpacking libfido2-1:amd64 (1.11.0-1+b1) ...
+Preparing to unpack .../014-libfido2-1_1.12.0-1_amd64.deb ...
+Unpacking libfido2-1:amd64 (1.12.0-1) ...
 Selecting previously unselected package libkrb5support0:amd64.
-Preparing to unpack .../015-libkrb5support0_1.20-1_amd64.deb ...
-Unpacking libkrb5support0:amd64 (1.20-1) ...
+Preparing to unpack .../015-libkrb5support0_1.20-1+b1_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.20-1+b1) ...
 Selecting previously unselected package libk5crypto3:amd64.
-Preparing to unpack .../016-libk5crypto3_1.20-1_amd64.deb ...
-Unpacking libk5crypto3:amd64 (1.20-1) ...
+Preparing to unpack .../016-libk5crypto3_1.20-1+b1_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.20-1+b1) ...
 Selecting previously unselected package libkeyutils1:amd64.
 Preparing to unpack .../017-libkeyutils1_1.6.3-1_amd64.deb ...
 Unpacking libkeyutils1:amd64 (1.6.3-1) ...
 Selecting previously unselected package libkrb5-3:amd64.
-Preparing to unpack .../018-libkrb5-3_1.20-1_amd64.deb ...
-Unpacking libkrb5-3:amd64 (1.20-1) ...
+Preparing to unpack .../018-libkrb5-3_1.20-1+b1_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.20-1+b1) ...
 Selecting previously unselected package libgssapi-krb5-2:amd64.
-Preparing to unpack .../019-libgssapi-krb5-2_1.20-1_amd64.deb ...
-Unpacking libgssapi-krb5-2:amd64 (1.20-1) ...
+Preparing to unpack .../019-libgssapi-krb5-2_1.20-1+b1_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.20-1+b1) ...
 Selecting previously unselected package openssh-client.
-Preparing to unpack .../020-openssh-client_1%3a9.0p1-1+b1_amd64.deb ...
-Unpacking openssh-client (1:9.0p1-1+b1) ...
+Preparing to unpack .../020-openssh-client_1%3a9.0p1-1+b2_amd64.deb ...
+Unpacking openssh-client (1:9.0p1-1+b2) ...
 Selecting previously unselected package ucf.
 Preparing to unpack .../021-ucf_3.0043_all.deb ...
 Moving old data out of the way
@@ -177,29 +124,29 @@ Selecting previously unselected package xz-utils.
 Preparing to unpack .../024-xz-utils_5.2.5-2.1_amd64.deb ...
 Unpacking xz-utils (5.2.5-2.1) ...
 Selecting previously unselected package binutils-common:amd64.
-Preparing to unpack .../025-binutils-common_2.38.90.20220713-2_amd64.deb ...
-Unpacking binutils-common:amd64 (2.38.90.20220713-2) ...
+Preparing to unpack .../025-binutils-common_2.39-8_amd64.deb ...
+Unpacking binutils-common:amd64 (2.39-8) ...
 Selecting previously unselected package libbinutils:amd64.
-Preparing to unpack .../026-libbinutils_2.38.90.20220713-2_amd64.deb ...
-Unpacking libbinutils:amd64 (2.38.90.20220713-2) ...
+Preparing to unpack .../026-libbinutils_2.39-8_amd64.deb ...
+Unpacking libbinutils:amd64 (2.39-8) ...
 Selecting previously unselected package libctf-nobfd0:amd64.
-Preparing to unpack .../027-libctf-nobfd0_2.38.90.20220713-2_amd64.deb ...
-Unpacking libctf-nobfd0:amd64 (2.38.90.20220713-2) ...
+Preparing to unpack .../027-libctf-nobfd0_2.39-8_amd64.deb ...
+Unpacking libctf-nobfd0:amd64 (2.39-8) ...
 Selecting previously unselected package libctf0:amd64.
-Preparing to unpack .../028-libctf0_2.38.90.20220713-2_amd64.deb ...
-Unpacking libctf0:amd64 (2.38.90.20220713-2) ...
+Preparing to unpack .../028-libctf0_2.39-8_amd64.deb ...
+Unpacking libctf0:amd64 (2.39-8) ...
 Selecting previously unselected package libgprofng0:amd64.
-Preparing to unpack .../029-libgprofng0_2.38.90.20220713-2_amd64.deb ...
-Unpacking libgprofng0:amd64 (2.38.90.20220713-2) ...
+Preparing to unpack .../029-libgprofng0_2.39-8_amd64.deb ...
+Unpacking libgprofng0:amd64 (2.39-8) ...
 Selecting previously unselected package binutils-x86-64-linux-gnu.
-Preparing to unpack .../030-binutils-x86-64-linux-gnu_2.38.90.20220713-2_amd64.deb ...
-Unpacking binutils-x86-64-linux-gnu (2.38.90.20220713-2) ...
+Preparing to unpack .../030-binutils-x86-64-linux-gnu_2.39-8_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu (2.39-8) ...
 Selecting previously unselected package binutils.
-Preparing to unpack .../031-binutils_2.38.90.20220713-2_amd64.deb ...
-Unpacking binutils (2.38.90.20220713-2) ...
+Preparing to unpack .../031-binutils_2.39-8_amd64.deb ...
+Unpacking binutils (2.39-8) ...
 Selecting previously unselected package bsdextrautils.
-Preparing to unpack .../032-bsdextrautils_2.38.1-1_amd64.deb ...
-Unpacking bsdextrautils (2.38.1-1) ...
+Preparing to unpack .../032-bsdextrautils_2.38.1-1.1+b1_amd64.deb ...
+Unpacking bsdextrautils (2.38.1-1.1+b1) ...
 Selecting previously unselected package ncal.
 Preparing to unpack .../033-ncal_12.1.7+nmu3_amd64.deb ...
 Unpacking ncal (12.1.7+nmu3) ...
@@ -207,11 +154,11 @@ Selecting previously unselected package bsdmainutils.
 Preparing to unpack .../034-bsdmainutils_12.1.7+nmu3_all.deb ...
 Unpacking bsdmainutils (12.1.7+nmu3) ...
 Selecting previously unselected package libc-dev-bin.
-Preparing to unpack .../035-libc-dev-bin_2.34-3_amd64.deb ...
-Unpacking libc-dev-bin (2.34-3) ...
+Preparing to unpack .../035-libc-dev-bin_2.35-3_amd64.deb ...
+Unpacking libc-dev-bin (2.35-3) ...
 Selecting previously unselected package linux-libc-dev:amd64.
-Preparing to unpack .../036-linux-libc-dev_5.18.16-1_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (5.18.16-1) ...
+Preparing to unpack .../036-linux-libc-dev_5.19.11-1_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (5.19.11-1) ...
 Selecting previously unselected package libcrypt-dev:amd64.
 Preparing to unpack .../037-libcrypt-dev_1%3a4.4.28-2_amd64.deb ...
 Unpacking libcrypt-dev:amd64 (1:4.4.28-2) ...
@@ -234,8 +181,8 @@ Selecting previously unselected package rpcsvc-proto.
 Preparing to unpack .../043-rpcsvc-proto_1.4.2-4_amd64.deb ...
 Unpacking rpcsvc-proto (1.4.2-4) ...
 Selecting previously unselected package libc6-dev:amd64.
-Preparing to unpack .../044-libc6-dev_2.34-3_amd64.deb ...
-Unpacking libc6-dev:amd64 (2.34-3) ...
+Preparing to unpack .../044-libc6-dev_2.35-3_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.35-3) ...
 Selecting previously unselected package libisl23:amd64.
 Preparing to unpack .../045-libisl23_0.25-1_amd64.deb ...
 Unpacking libisl23:amd64 (0.25-1) ...
@@ -246,56 +193,56 @@ Selecting previously unselected package libmpc3:amd64.
 Preparing to unpack .../047-libmpc3_1.2.1-2_amd64.deb ...
 Unpacking libmpc3:amd64 (1.2.1-2) ...
 Selecting previously unselected package cpp-12.
-Preparing to unpack .../048-cpp-12_12.1.0-8_amd64.deb ...
-Unpacking cpp-12 (12.1.0-8) ...
+Preparing to unpack .../048-cpp-12_12.2.0-3_amd64.deb ...
+Unpacking cpp-12 (12.2.0-3) ...
 Selecting previously unselected package cpp.
-Preparing to unpack .../049-cpp_4%3a12.1.0-3_amd64.deb ...
-Unpacking cpp (4:12.1.0-3) ...
+Preparing to unpack .../049-cpp_4%3a12.2.0-1_amd64.deb ...
+Unpacking cpp (4:12.2.0-1) ...
 Selecting previously unselected package libcc1-0:amd64.
-Preparing to unpack .../050-libcc1-0_12.1.0-8_amd64.deb ...
-Unpacking libcc1-0:amd64 (12.1.0-8) ...
+Preparing to unpack .../050-libcc1-0_12.2.0-3_amd64.deb ...
+Unpacking libcc1-0:amd64 (12.2.0-3) ...
 Selecting previously unselected package libgomp1:amd64.
-Preparing to unpack .../051-libgomp1_12.1.0-8_amd64.deb ...
-Unpacking libgomp1:amd64 (12.1.0-8) ...
+Preparing to unpack .../051-libgomp1_12.2.0-3_amd64.deb ...
+Unpacking libgomp1:amd64 (12.2.0-3) ...
 Selecting previously unselected package libitm1:amd64.
-Preparing to unpack .../052-libitm1_12.1.0-8_amd64.deb ...
-Unpacking libitm1:amd64 (12.1.0-8) ...
+Preparing to unpack .../052-libitm1_12.2.0-3_amd64.deb ...
+Unpacking libitm1:amd64 (12.2.0-3) ...
 Selecting previously unselected package libatomic1:amd64.
-Preparing to unpack .../053-libatomic1_12.1.0-8_amd64.deb ...
-Unpacking libatomic1:amd64 (12.1.0-8) ...
+Preparing to unpack .../053-libatomic1_12.2.0-3_amd64.deb ...
+Unpacking libatomic1:amd64 (12.2.0-3) ...
 Selecting previously unselected package libasan8:amd64.
-Preparing to unpack .../054-libasan8_12.1.0-8_amd64.deb ...
-Unpacking libasan8:amd64 (12.1.0-8) ...
+Preparing to unpack .../054-libasan8_12.2.0-3_amd64.deb ...
+Unpacking libasan8:amd64 (12.2.0-3) ...
 Selecting previously unselected package liblsan0:amd64.
-Preparing to unpack .../055-liblsan0_12.1.0-8_amd64.deb ...
-Unpacking liblsan0:amd64 (12.1.0-8) ...
+Preparing to unpack .../055-liblsan0_12.2.0-3_amd64.deb ...
+Unpacking liblsan0:amd64 (12.2.0-3) ...
 Selecting previously unselected package libtsan2:amd64.
-Preparing to unpack .../056-libtsan2_12.1.0-8_amd64.deb ...
-Unpacking libtsan2:amd64 (12.1.0-8) ...
+Preparing to unpack .../056-libtsan2_12.2.0-3_amd64.deb ...
+Unpacking libtsan2:amd64 (12.2.0-3) ...
 Selecting previously unselected package libubsan1:amd64.
-Preparing to unpack .../057-libubsan1_12.1.0-8_amd64.deb ...
-Unpacking libubsan1:amd64 (12.1.0-8) ...
+Preparing to unpack .../057-libubsan1_12.2.0-3_amd64.deb ...
+Unpacking libubsan1:amd64 (12.2.0-3) ...
 Selecting previously unselected package libquadmath0:amd64.
-Preparing to unpack .../058-libquadmath0_12.1.0-8_amd64.deb ...
-Unpacking libquadmath0:amd64 (12.1.0-8) ...
+Preparing to unpack .../058-libquadmath0_12.2.0-3_amd64.deb ...
+Unpacking libquadmath0:amd64 (12.2.0-3) ...
 Selecting previously unselected package libgcc-12-dev:amd64.
-Preparing to unpack .../059-libgcc-12-dev_12.1.0-8_amd64.deb ...
-Unpacking libgcc-12-dev:amd64 (12.1.0-8) ...
+Preparing to unpack .../059-libgcc-12-dev_12.2.0-3_amd64.deb ...
+Unpacking libgcc-12-dev:amd64 (12.2.0-3) ...
 Selecting previously unselected package gcc-12.
-Preparing to unpack .../060-gcc-12_12.1.0-8_amd64.deb ...
-Unpacking gcc-12 (12.1.0-8) ...
+Preparing to unpack .../060-gcc-12_12.2.0-3_amd64.deb ...
+Unpacking gcc-12 (12.2.0-3) ...
 Selecting previously unselected package gcc.
-Preparing to unpack .../061-gcc_4%3a12.1.0-3_amd64.deb ...
-Unpacking gcc (4:12.1.0-3) ...
+Preparing to unpack .../061-gcc_4%3a12.2.0-1_amd64.deb ...
+Unpacking gcc (4:12.2.0-1) ...
 Selecting previously unselected package libstdc++-12-dev:amd64.
-Preparing to unpack .../062-libstdc++-12-dev_12.1.0-8_amd64.deb ...
-Unpacking libstdc++-12-dev:amd64 (12.1.0-8) ...
+Preparing to unpack .../062-libstdc++-12-dev_12.2.0-3_amd64.deb ...
+Unpacking libstdc++-12-dev:amd64 (12.2.0-3) ...
 Selecting previously unselected package g++-12.
-Preparing to unpack .../063-g++-12_12.1.0-8_amd64.deb ...
-Unpacking g++-12 (12.1.0-8) ...
+Preparing to unpack .../063-g++-12_12.2.0-3_amd64.deb ...
+Unpacking g++-12 (12.2.0-3) ...
 Selecting previously unselected package g++.
-Preparing to unpack .../064-g++_4%3a12.1.0-3_amd64.deb ...
-Unpacking g++ (4:12.1.0-3) ...
+Preparing to unpack .../064-g++_4%3a12.2.0-1_amd64.deb ...
+Unpacking g++ (4:12.2.0-1) ...
 Selecting previously unselected package make.
 Preparing to unpack .../065-make_4.3-4.1_amd64.deb ...
 Unpacking make (4.3-4.1) ...
@@ -321,29 +268,29 @@ Selecting previously unselected package libassuan0:amd64.
 Preparing to unpack .../072-libassuan0_2.5.5-4_amd64.deb ...
 Unpacking libassuan0:amd64 (2.5.5-4) ...
 Selecting previously unselected package libreadline8:amd64.
-Preparing to unpack .../073-libreadline8_8.1.2-1.2_amd64.deb ...
-Unpacking libreadline8:amd64 (8.1.2-1.2) ...
+Preparing to unpack .../073-libreadline8_8.2-1_amd64.deb ...
+Unpacking libreadline8:amd64 (8.2-1) ...
 Selecting previously unselected package gpgconf.
-Preparing to unpack .../074-gpgconf_2.2.35-3_amd64.deb ...
-Unpacking gpgconf (2.2.35-3) ...
+Preparing to unpack .../074-gpgconf_2.2.40-1_amd64.deb ...
+Unpacking gpgconf (2.2.40-1) ...
 Selecting previously unselected package libksba8:amd64.
-Preparing to unpack .../075-libksba8_1.6.0-3_amd64.deb ...
-Unpacking libksba8:amd64 (1.6.0-3) ...
+Preparing to unpack .../075-libksba8_1.6.2-2_amd64.deb ...
+Unpacking libksba8:amd64 (1.6.2-2) ...
 Selecting previously unselected package libsasl2-modules-db:amd64.
-Preparing to unpack .../076-libsasl2-modules-db_2.1.28+dfsg-6_amd64.deb ...
-Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg-6) ...
+Preparing to unpack .../076-libsasl2-modules-db_2.1.28+dfsg-8_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg-8) ...
 Selecting previously unselected package libsasl2-2:amd64.
-Preparing to unpack .../077-libsasl2-2_2.1.28+dfsg-6_amd64.deb ...
-Unpacking libsasl2-2:amd64 (2.1.28+dfsg-6) ...
+Preparing to unpack .../077-libsasl2-2_2.1.28+dfsg-8_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.28+dfsg-8) ...
 Selecting previously unselected package libldap-2.5-0:amd64.
-Preparing to unpack .../078-libldap-2.5-0_2.5.12+dfsg-2+b1_amd64.deb ...
-Unpacking libldap-2.5-0:amd64 (2.5.12+dfsg-2+b1) ...
+Preparing to unpack .../078-libldap-2.5-0_2.5.13+dfsg-2_amd64.deb ...
+Unpacking libldap-2.5-0:amd64 (2.5.13+dfsg-2) ...
 Selecting previously unselected package libnpth0:amd64.
 Preparing to unpack .../079-libnpth0_1.6-3_amd64.deb ...
 Unpacking libnpth0:amd64 (1.6-3) ...
 Selecting previously unselected package dirmngr.
-Preparing to unpack .../080-dirmngr_2.2.35-3_amd64.deb ...
-Unpacking dirmngr (2.2.35-3) ...
+Preparing to unpack .../080-dirmngr_2.2.40-1_amd64.deb ...
+Unpacking dirmngr (2.2.40-1) ...
 Selecting previously unselected package dos2unix.
 Preparing to unpack .../081-dos2unix_7.4.3-1_amd64.deb ...
 Unpacking dos2unix (7.4.3-1) ...
@@ -354,8 +301,8 @@ Selecting previously unselected package libefiboot1:amd64.
 Preparing to unpack .../083-libefiboot1_37-6_amd64.deb ...
 Unpacking libefiboot1:amd64 (37-6) ...
 Selecting previously unselected package libpopt0:amd64.
-Preparing to unpack .../084-libpopt0_1.18-3_amd64.deb ...
-Unpacking libpopt0:amd64 (1.18-3) ...
+Preparing to unpack .../084-libpopt0_1.19+dfsg-1_amd64.deb ...
+Unpacking libpopt0:amd64 (1.19+dfsg-1) ...
 Selecting previously unselected package efibootmgr.
 Preparing to unpack .../085-efibootmgr_17-1_amd64.deb ...
 Unpacking efibootmgr (17-1) ...
@@ -375,14 +322,14 @@ Selecting previously unselected package fonts-dejavu-core.
 Preparing to unpack .../090-fonts-dejavu-core_2.37-2_all.deb ...
 Unpacking fonts-dejavu-core (2.37-2) ...
 Selecting previously unselected package fontconfig-config.
-Preparing to unpack .../091-fontconfig-config_2.13.1-4.4_all.deb ...
-Unpacking fontconfig-config (2.13.1-4.4) ...
+Preparing to unpack .../091-fontconfig-config_2.13.1-4.5_amd64.deb ...
+Unpacking fontconfig-config (2.13.1-4.5) ...
 Selecting previously unselected package libbrotli1:amd64.
 Preparing to unpack .../092-libbrotli1_1.0.9-2+b4_amd64.deb ...
 Unpacking libbrotli1:amd64 (1.0.9-2+b4) ...
 Selecting previously unselected package libnghttp2-14:amd64.
-Preparing to unpack .../093-libnghttp2-14_1.48.0-1_amd64.deb ...
-Unpacking libnghttp2-14:amd64 (1.48.0-1) ...
+Preparing to unpack .../093-libnghttp2-14_1.50.0-1+b1_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.50.0-1+b1) ...
 Selecting previously unselected package librtmp1:amd64.
 Preparing to unpack .../094-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
@@ -390,14 +337,14 @@ Selecting previously unselected package libssh2-1:amd64.
 Preparing to unpack .../095-libssh2-1_1.10.0-3+b1_amd64.deb ...
 Unpacking libssh2-1:amd64 (1.10.0-3+b1) ...
 Selecting previously unselected package libcurl3-gnutls:amd64.
-Preparing to unpack .../096-libcurl3-gnutls_7.84.0-2_amd64.deb ...
-Unpacking libcurl3-gnutls:amd64 (7.84.0-2) ...
+Preparing to unpack .../096-libcurl3-gnutls_7.85.0-1_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.85.0-1) ...
 Selecting previously unselected package libexpat1:amd64.
-Preparing to unpack .../097-libexpat1_2.4.8-1_amd64.deb ...
-Unpacking libexpat1:amd64 (2.4.8-1) ...
+Preparing to unpack .../097-libexpat1_2.4.9-1_amd64.deb ...
+Unpacking libexpat1:amd64 (2.4.9-1) ...
 Selecting previously unselected package liberror-perl.
-Preparing to unpack .../098-liberror-perl_0.17029-1_all.deb ...
-Unpacking liberror-perl (0.17029-1) ...
+Preparing to unpack .../098-liberror-perl_0.17029-2_all.deb ...
+Unpacking liberror-perl (0.17029-2) ...
 Selecting previously unselected package git-man.
 Preparing to unpack .../099-git-man_1%3a2.35.1-1_all.deb ...
 Unpacking git-man (1:2.35.1-1) ...
@@ -405,71 +352,71 @@ Selecting previously unselected package git.
 Preparing to unpack .../100-git_1%3a2.35.1-1_amd64.deb ...
 Unpacking git (1:2.35.1-1) ...
 Selecting previously unselected package gnu-efi.
-Preparing to unpack .../101-gnu-efi_3.0.13+git20210716.269ef9d-2_amd64.deb ...
-Unpacking gnu-efi (3.0.13+git20210716.269ef9d-2) ...
+Preparing to unpack .../101-gnu-efi_3.0.13+git20210716.269ef9d-2+b1_amd64.deb ...
+Unpacking gnu-efi (3.0.13+git20210716.269ef9d-2+b1) ...
 Selecting previously unselected package gnupg-l10n.
-Preparing to unpack .../102-gnupg-l10n_2.2.35-3_all.deb ...
-Unpacking gnupg-l10n (2.2.35-3) ...
+Preparing to unpack .../102-gnupg-l10n_2.2.40-1_all.deb ...
+Unpacking gnupg-l10n (2.2.40-1) ...
 Selecting previously unselected package gnupg-utils.
-Preparing to unpack .../103-gnupg-utils_2.2.35-3_amd64.deb ...
-Unpacking gnupg-utils (2.2.35-3) ...
+Preparing to unpack .../103-gnupg-utils_2.2.40-1_amd64.deb ...
+Unpacking gnupg-utils (2.2.40-1) ...
 Selecting previously unselected package libsqlite3-0:amd64.
-Preparing to unpack .../104-libsqlite3-0_3.39.2-1_amd64.deb ...
-Unpacking libsqlite3-0:amd64 (3.39.2-1) ...
+Preparing to unpack .../104-libsqlite3-0_3.39.4-1_amd64.deb ...
+Unpacking libsqlite3-0:amd64 (3.39.4-1) ...
 Selecting previously unselected package gpg.
-Preparing to unpack .../105-gpg_2.2.35-3_amd64.deb ...
-Unpacking gpg (2.2.35-3) ...
+Preparing to unpack .../105-gpg_2.2.40-1_amd64.deb ...
+Unpacking gpg (2.2.40-1) ...
 Selecting previously unselected package libncursesw6:amd64.
 Preparing to unpack .../106-libncursesw6_6.3+20220423-2_amd64.deb ...
 Unpacking libncursesw6:amd64 (6.3+20220423-2) ...
 Selecting previously unselected package pinentry-curses.
-Preparing to unpack .../107-pinentry-curses_1.2.0-2_amd64.deb ...
-Unpacking pinentry-curses (1.2.0-2) ...
+Preparing to unpack .../107-pinentry-curses_1.2.1-1_amd64.deb ...
+Unpacking pinentry-curses (1.2.1-1) ...
 Selecting previously unselected package gpg-agent.
-Preparing to unpack .../108-gpg-agent_2.2.35-3_amd64.deb ...
-Unpacking gpg-agent (2.2.35-3) ...
+Preparing to unpack .../108-gpg-agent_2.2.40-1_amd64.deb ...
+Unpacking gpg-agent (2.2.40-1) ...
 Selecting previously unselected package gpg-wks-client.
-Preparing to unpack .../109-gpg-wks-client_2.2.35-3_amd64.deb ...
-Unpacking gpg-wks-client (2.2.35-3) ...
+Preparing to unpack .../109-gpg-wks-client_2.2.40-1_amd64.deb ...
+Unpacking gpg-wks-client (2.2.40-1) ...
 Selecting previously unselected package gpg-wks-server.
-Preparing to unpack .../110-gpg-wks-server_2.2.35-3_amd64.deb ...
-Unpacking gpg-wks-server (2.2.35-3) ...
+Preparing to unpack .../110-gpg-wks-server_2.2.40-1_amd64.deb ...
+Unpacking gpg-wks-server (2.2.40-1) ...
 Selecting previously unselected package gpgsm.
-Preparing to unpack .../111-gpgsm_2.2.35-3_amd64.deb ...
-Unpacking gpgsm (2.2.35-3) ...
+Preparing to unpack .../111-gpgsm_2.2.40-1_amd64.deb ...
+Unpacking gpgsm (2.2.40-1) ...
 Selecting previously unselected package gnupg.
-Preparing to unpack .../112-gnupg_2.2.35-3_all.deb ...
-Unpacking gnupg (2.2.35-3) ...
+Preparing to unpack .../112-gnupg_2.2.40-1_all.deb ...
+Unpacking gnupg (2.2.40-1) ...
 Selecting previously unselected package libalgorithm-diff-perl.
 Preparing to unpack .../113-libalgorithm-diff-perl_1.201-1_all.deb ...
 Unpacking libalgorithm-diff-perl (1.201-1) ...
 Selecting previously unselected package libalgorithm-diff-xs-perl:amd64.
-Preparing to unpack .../114-libalgorithm-diff-xs-perl_0.04-7_amd64.deb ...
-Unpacking libalgorithm-diff-xs-perl:amd64 (0.04-7) ...
+Preparing to unpack .../114-libalgorithm-diff-xs-perl_0.04-8_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl:amd64 (0.04-8) ...
 Selecting previously unselected package libalgorithm-merge-perl.
-Preparing to unpack .../115-libalgorithm-merge-perl_0.08-4_all.deb ...
-Unpacking libalgorithm-merge-perl (0.08-4) ...
+Preparing to unpack .../115-libalgorithm-merge-perl_0.08-5_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-5) ...
 Selecting previously unselected package libpng16-16:amd64.
-Preparing to unpack .../116-libpng16-16_1.6.37-5_amd64.deb ...
-Unpacking libpng16-16:amd64 (1.6.37-5) ...
+Preparing to unpack .../116-libpng16-16_1.6.38-2_amd64.deb ...
+Unpacking libpng16-16:amd64 (1.6.38-2) ...
 Selecting previously unselected package libfreetype6:amd64.
 Preparing to unpack .../117-libfreetype6_2.12.1+dfsg-3_amd64.deb ...
 Unpacking libfreetype6:amd64 (2.12.1+dfsg-3) ...
 Selecting previously unselected package libfontconfig1:amd64.
-Preparing to unpack .../118-libfontconfig1_2.13.1-4.4_amd64.deb ...
-Unpacking libfontconfig1:amd64 (2.13.1-4.4) ...
+Preparing to unpack .../118-libfontconfig1_2.13.1-4.5_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.13.1-4.5) ...
 Selecting previously unselected package libjpeg62-turbo:amd64.
-Preparing to unpack .../119-libjpeg62-turbo_1%3a2.1.2-1_amd64.deb ...
-Unpacking libjpeg62-turbo:amd64 (1:2.1.2-1) ...
+Preparing to unpack .../119-libjpeg62-turbo_1%3a2.1.2-1+b1_amd64.deb ...
+Unpacking libjpeg62-turbo:amd64 (1:2.1.2-1+b1) ...
 Selecting previously unselected package libdeflate0:amd64.
-Preparing to unpack .../120-libdeflate0_1.12-1_amd64.deb ...
-Unpacking libdeflate0:amd64 (1.12-1) ...
+Preparing to unpack .../120-libdeflate0_1.14-1_amd64.deb ...
+Unpacking libdeflate0:amd64 (1.14-1) ...
 Selecting previously unselected package libjbig0:amd64.
 Preparing to unpack .../121-libjbig0_2.1-3.1+b2_amd64.deb ...
 Unpacking libjbig0:amd64 (2.1-3.1+b2) ...
 Selecting previously unselected package liblerc4:amd64.
-Preparing to unpack .../122-liblerc4_4.0.0+ds-1_amd64.deb ...
-Unpacking liblerc4:amd64 (4.0.0+ds-1) ...
+Preparing to unpack .../122-liblerc4_4.0.0+ds-2_amd64.deb ...
+Unpacking liblerc4:amd64 (4.0.0+ds-2) ...
 Selecting previously unselected package libwebp7:amd64.
 Preparing to unpack .../123-libwebp7_1.2.2-2+b1_amd64.deb ...
 Unpacking libwebp7:amd64 (1.2.2-2+b1) ...
@@ -498,56 +445,56 @@ Selecting previously unselected package libgd3:amd64.
 Preparing to unpack .../131-libgd3_2.3.3-6_amd64.deb ...
 Unpacking libgd3:amd64 (2.3.3-6) ...
 Selecting previously unselected package libc-devtools.
-Preparing to unpack .../132-libc-devtools_2.34-3_amd64.deb ...
-Unpacking libc-devtools (2.34-3) ...
+Preparing to unpack .../132-libc-devtools_2.35-3_amd64.deb ...
+Unpacking libc-devtools (2.35-3) ...
 Selecting previously unselected package libefivar-dev:amd64.
 Preparing to unpack .../133-libefivar-dev_37-6_amd64.deb ...
 Unpacking libefivar-dev:amd64 (37-6) ...
 Selecting previously unselected package libelf1:amd64.
-Preparing to unpack .../134-libelf1_0.187-1_amd64.deb ...
-Unpacking libelf1:amd64 (0.187-1) ...
+Preparing to unpack .../134-libelf1_0.187-4_amd64.deb ...
+Unpacking libelf1:amd64 (0.187-4) ...
 Selecting previously unselected package zlib1g-dev:amd64.
-Preparing to unpack .../135-zlib1g-dev_1%3a1.2.11.dfsg-4_amd64.deb ...
-Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-4) ...
+Preparing to unpack .../135-zlib1g-dev_1%3a1.2.11.dfsg-4.1_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-4.1) ...
 Selecting previously unselected package libelf-dev:amd64.
-Preparing to unpack .../136-libelf-dev_0.187-1_amd64.deb ...
-Unpacking libelf-dev:amd64 (0.187-1) ...
+Preparing to unpack .../136-libelf-dev_0.187-4_amd64.deb ...
+Unpacking libelf-dev:amd64 (0.187-4) ...
 Selecting previously unselected package libfile-fcntllock-perl.
 Preparing to unpack .../137-libfile-fcntllock-perl_0.22-4_amd64.deb ...
 Unpacking libfile-fcntllock-perl (0.22-4) ...
 Selecting previously unselected package libglib2.0-0:amd64.
-Preparing to unpack .../138-libglib2.0-0_2.72.3-1+b1_amd64.deb ...
-Unpacking libglib2.0-0:amd64 (2.72.3-1+b1) ...
+Preparing to unpack .../138-libglib2.0-0_2.74.0-3_amd64.deb ...
+Unpacking libglib2.0-0:amd64 (2.74.0-3) ...
 Selecting previously unselected package libglib2.0-data.
-Preparing to unpack .../139-libglib2.0-data_2.72.3-1_all.deb ...
-Unpacking libglib2.0-data (2.72.3-1) ...
+Preparing to unpack .../139-libglib2.0-data_2.74.0-3_all.deb ...
+Unpacking libglib2.0-data (2.74.0-3) ...
 Selecting previously unselected package libgpm2:amd64.
-Preparing to unpack .../140-libgpm2_1.20.7-10_amd64.deb ...
-Unpacking libgpm2:amd64 (1.20.7-10) ...
+Preparing to unpack .../140-libgpm2_1.20.7-10+b1_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.7-10+b1) ...
 Selecting previously unselected package libicu71:amd64.
 Preparing to unpack .../141-libicu71_71.1-3_amd64.deb ...
 Unpacking libicu71:amd64 (71.1-3) ...
 Selecting previously unselected package libldap-common.
-Preparing to unpack .../142-libldap-common_2.5.12+dfsg-2_all.deb ...
-Unpacking libldap-common (2.5.12+dfsg-2) ...
+Preparing to unpack .../142-libldap-common_2.5.13+dfsg-2_all.deb ...
+Unpacking libldap-common (2.5.13+dfsg-2) ...
 Selecting previously unselected package libnspr4:amd64.
-Preparing to unpack .../143-libnspr4_2%3a4.34-1_amd64.deb ...
-Unpacking libnspr4:amd64 (2:4.34-1) ...
+Preparing to unpack .../143-libnspr4_2%3a4.35-1_amd64.deb ...
+Unpacking libnspr4:amd64 (2:4.35-1) ...
 Selecting previously unselected package libnss3:amd64.
-Preparing to unpack .../144-libnss3_2%3a3.79-1_amd64.deb ...
-Unpacking libnss3:amd64 (2:3.79-1) ...
+Preparing to unpack .../144-libnss3_2%3a3.83-1_amd64.deb ...
+Unpacking libnss3:amd64 (2:3.83-1) ...
 Selecting previously unselected package libnss3-tools.
-Preparing to unpack .../145-libnss3-tools_2%3a3.79-1_amd64.deb ...
-Unpacking libnss3-tools (2:3.79-1) ...
+Preparing to unpack .../145-libnss3-tools_2%3a3.83-1_amd64.deb ...
+Unpacking libnss3-tools (2:3.83-1) ...
 Selecting previously unselected package libpopt-dev:amd64.
-Preparing to unpack .../146-libpopt-dev_1.18-3_amd64.deb ...
-Unpacking libpopt-dev:amd64 (1.18-3) ...
+Preparing to unpack .../146-libpopt-dev_1.19+dfsg-1_amd64.deb ...
+Unpacking libpopt-dev:amd64 (1.19+dfsg-1) ...
 Selecting previously unselected package libsasl2-modules:amd64.
-Preparing to unpack .../147-libsasl2-modules_2.1.28+dfsg-6_amd64.deb ...
-Unpacking libsasl2-modules:amd64 (2.1.28+dfsg-6) ...
+Preparing to unpack .../147-libsasl2-modules_2.1.28+dfsg-8_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.28+dfsg-8) ...
 Selecting previously unselected package libxext6:amd64.
-Preparing to unpack .../148-libxext6_2%3a1.3.4-1_amd64.deb ...
-Unpacking libxext6:amd64 (2:1.3.4-1) ...
+Preparing to unpack .../148-libxext6_2%3a1.3.4-1+b1_amd64.deb ...
+Unpacking libxext6:amd64 (2:1.3.4-1+b1) ...
 Selecting previously unselected package libxml2:amd64.
 Preparing to unpack .../149-libxml2_2.9.14+dfsg-1+b1_amd64.deb ...
 Unpacking libxml2:amd64 (2.9.14+dfsg-1+b1) ...
@@ -558,68 +505,68 @@ Selecting previously unselected package manpages-dev.
 Preparing to unpack .../151-manpages-dev_5.13-1_all.deb ...
 Unpacking manpages-dev (5.13-1) ...
 Selecting previously unselected package opensc-pkcs11:amd64.
-Preparing to unpack .../152-opensc-pkcs11_0.22.0-2+b1_amd64.deb ...
-Unpacking opensc-pkcs11:amd64 (0.22.0-2+b1) ...
+Preparing to unpack .../152-opensc-pkcs11_0.22.0-2.1_amd64.deb ...
+Unpacking opensc-pkcs11:amd64 (0.22.0-2.1) ...
 Selecting previously unselected package opensc.
-Preparing to unpack .../153-opensc_0.22.0-2+b1_amd64.deb ...
-Unpacking opensc (0.22.0-2+b1) ...
+Preparing to unpack .../153-opensc_0.22.0-2.1_amd64.deb ...
+Unpacking opensc (0.22.0-2.1) ...
 Selecting previously unselected package pesign.
 Preparing to unpack .../154-pesign_0.112-6_amd64.deb ...
 Unpacking pesign (0.112-6) ...
 Selecting previously unselected package publicsuffix.
-Preparing to unpack .../155-publicsuffix_20220614.1839-1_all.deb ...
-Unpacking publicsuffix (20220614.1839-1) ...
+Preparing to unpack .../155-publicsuffix_20220811.1734-1_all.deb ...
+Unpacking publicsuffix (20220811.1734-1) ...
 Selecting previously unselected package shared-mime-info.
 Preparing to unpack .../156-shared-mime-info_2.2-1_amd64.deb ...
 Unpacking shared-mime-info (2.2-1) ...
 Selecting previously unselected package uuid-dev:amd64.
-Preparing to unpack .../157-uuid-dev_2.38.1-1_amd64.deb ...
-Unpacking uuid-dev:amd64 (2.38.1-1) ...
+Preparing to unpack .../157-uuid-dev_2.38.1-1.1+b1_amd64.deb ...
+Unpacking uuid-dev:amd64 (2.38.1-1.1+b1) ...
 Selecting previously unselected package xauth.
 Preparing to unpack .../158-xauth_1%3a1.1.1-1_amd64.deb ...
 Unpacking xauth (1:1.1.1-1) ...
 Selecting previously unselected package xdg-user-dirs.
-Preparing to unpack .../159-xdg-user-dirs_0.17-2_amd64.deb ...
-Unpacking xdg-user-dirs (0.17-2) ...
-Setting up libksba8:amd64 (1.6.0-3) ...
-Setting up libexpat1:amd64 (2.4.8-1) ...
-Setting up gnu-efi (3.0.13+git20210716.269ef9d-2) ...
+Preparing to unpack .../159-xdg-user-dirs_0.18-1_amd64.deb ...
+Unpacking xdg-user-dirs (0.18-1) ...
+Setting up libksba8:amd64 (1.6.2-2) ...
+Setting up libexpat1:amd64 (2.4.9-1) ...
+Setting up gnu-efi (3.0.13+git20210716.269ef9d-2+b1) ...
 Setting up libicu71:amd64 (71.1-3) ...
 Setting up libxau6:amd64 (1:1.0.9-1) ...
 Setting up libkeyutils1:amd64 (1.6.3-1) ...
 Setting up libpsl5:amd64 (0.21.0-1.2) ...
 Setting up libckyapplet1 (1.1.0-16) ...
-Setting up libgpm2:amd64 (1.20.7-10) ...
-Setting up liblerc4:amd64 (4.0.0+ds-1) ...
-Setting up bsdextrautils (2.38.1-1) ...
+Setting up libgpm2:amd64 (1.20.7-10+b1) ...
+Setting up liblerc4:amd64 (4.0.0+ds-2) ...
+Setting up bsdextrautils (2.38.1-1.1+b1) ...
 Setting up wget (1.21.3-1+b2) ...
-Setting up xdg-user-dirs (0.17-2) ...
+Setting up xdg-user-dirs (0.18-1) ...
 Setting up ncal (12.1.7+nmu3) ...
-Setting up libglib2.0-0:amd64 (2.72.3-1+b1) ...
+Setting up libglib2.0-0:amd64 (2.74.0-3) ...
 No schema files found: doing nothing.
 Setting up manpages (5.13-1) ...
 Setting up libtirpc-common (1.3.3+ds-1) ...
-Setting up libcbor0.8:amd64 (0.8.0-2) ...
+Setting up libcbor0.8:amd64 (0.8.0-2+b1) ...
 Setting up libbrotli1:amd64 (1.0.9-2+b4) ...
-Setting up libsqlite3-0:amd64 (3.39.2-1) ...
-Setting up binutils-common:amd64 (2.38.90.20220713-2) ...
-Setting up libssl3:amd64 (3.0.5-2) ...
-Setting up libnghttp2-14:amd64 (1.48.0-1) ...
-Setting up libdeflate0:amd64 (1.12-1) ...
+Setting up libsqlite3-0:amd64 (3.39.4-1) ...
+Setting up binutils-common:amd64 (2.39-8) ...
+Setting up libssl3:amd64 (3.0.5-4) ...
+Setting up libnghttp2-14:amd64 (1.50.0-1+b1) ...
+Setting up libdeflate0:amd64 (1.14-1) ...
 Setting up less (590-1) ...
-Setting up linux-libc-dev:amd64 (5.18.16-1) ...
-Setting up libctf-nobfd0:amd64 (2.38.90.20220713-2) ...
+Setting up linux-libc-dev:amd64 (5.19.11-1) ...
+Setting up libctf-nobfd0:amd64 (2.39-8) ...
 Setting up libnpth0:amd64 (1.6-3) ...
 Setting up krb5-locales (1.20-1) ...
 Setting up libassuan0:amd64 (2.5.5-4) ...
-Setting up libgomp1:amd64 (12.1.0-8) ...
+Setting up libgomp1:amd64 (12.2.0-3) ...
 Setting up perl-modules-5.34 (5.34.0-5) ...
-Setting up bzip2 (1.0.8-5) ...
-Setting up libldap-common (2.5.12+dfsg-2) ...
+Setting up bzip2 (1.0.8-5+b1) ...
+Setting up libldap-common (2.5.13+dfsg-2) ...
 Setting up libjbig0:amd64 (2.1-3.1+b2) ...
 Setting up libfakeroot:amd64 (1.29-1) ...
-Setting up libkrb5support0:amd64 (1.20-1) ...
-Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg-6) ...
+Setting up libkrb5support0:amd64 (1.20-1+b1) ...
+Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg-8) ...
 Setting up fakeroot (1.29-1) ...
 update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
 update-alternatives: warning: skip creation of /usr/share/man/man1/fakeroot.1.gz because associated file /usr/share/man/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
@@ -630,15 +577,15 @@ update-alternatives: warning: skip creation of /usr/share/man/fr/man1/fakeroot.1
 update-alternatives: warning: skip creation of /usr/share/man/fr/man1/faked.1.gz because associated file /usr/share/man/fr/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
 update-alternatives: warning: skip creation of /usr/share/man/sv/man1/fakeroot.1.gz because associated file /usr/share/man/sv/man1/fakeroot-sysv.1.gz (of link group fakeroot) doesn't exist
 update-alternatives: warning: skip creation of /usr/share/man/sv/man1/faked.1.gz because associated file /usr/share/man/sv/man1/faked-sysv.1.gz (of link group fakeroot) doesn't exist
-Setting up opensc-pkcs11:amd64 (0.22.0-2+b1) ...
-Setting up libglib2.0-data (2.72.3-1) ...
+Setting up opensc-pkcs11:amd64 (0.22.0-2.1) ...
+Setting up libglib2.0-data (2.74.0-3) ...
 Setting up rpcsvc-proto (1.4.2-4) ...
-Setting up libjpeg62-turbo:amd64 (1:2.1.2-1) ...
+Setting up libjpeg62-turbo:amd64 (1:2.1.2-1+b1) ...
 Setting up libx11-data (2:1.8.1-2) ...
 Setting up make (4.3-4.1) ...
 Setting up libmpfr6:amd64 (4.1.0-3) ...
-Setting up libnspr4:amd64 (2:4.34-1) ...
-Setting up gnupg-l10n (2.2.35-3) ...
+Setting up libnspr4:amd64 (2:4.35-1) ...
+Setting up gnupg-l10n (2.2.40-1) ...
 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
 Setting up xz-utils (5.2.5-2.1) ...
 update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
@@ -652,158 +599,168 @@ update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz be
 update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
 update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
 update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
-Setting up libquadmath0:amd64 (12.1.0-8) ...
+Setting up libquadmath0:amd64 (12.2.0-3) ...
 Setting up bsdmainutils (12.1.7+nmu3) ...
-Setting up libpng16-16:amd64 (1.6.37-5) ...
+Setting up libpng16-16:amd64 (1.6.38-2) ...
 Setting up libmpc3:amd64 (1.2.1-2) ...
-Setting up libatomic1:amd64 (12.1.0-8) ...
+Setting up libatomic1:amd64 (12.2.0-3) ...
 Setting up patch (2.7.6-7) ...
 Setting up fonts-dejavu-core (2.37-2) ...
-Setting up libpcsclite1:amd64 (1.9.8-1) ...
+Setting up libpcsclite1:amd64 (1.9.9-1) ...
 Setting up libncursesw6:amd64 (6.3+20220423-2) ...
-Setting up libk5crypto3:amd64 (1.20-1) ...
-Setting up libsasl2-2:amd64 (2.1.28+dfsg-6) ...
+Setting up libk5crypto3:amd64 (1.20-1+b1) ...
+Setting up libsasl2-2:amd64 (2.1.28+dfsg-8) ...
 Setting up libwebp7:amd64 (1.2.2-2+b1) ...
-Setting up libubsan1:amd64 (12.1.0-8) ...
+Setting up libubsan1:amd64 (12.2.0-3) ...
 Setting up libmd0:amd64 (1.0.4-2) ...
-Setting up mount (2.38.1-1) ...
 Setting up sensible-utils (0.0.17) ...
 Setting up libcrypt-dev:amd64 (1:4.4.28-2) ...
-Setting up libasan8:amd64 (12.1.0-8) ...
+Setting up libasan8:amd64 (12.2.0-3) ...
 Setting up libefivar1:amd64 (37-6) ...
 Setting up git-man (1:2.35.1-1) ...
 Setting up libssh2-1:amd64 (1.10.0-3+b1) ...
-Setting up netbase (6.3) ...
-Setting up libkrb5-3:amd64 (1.20-1) ...
+Setting up netbase (6.4) ...
+Setting up libkrb5-3:amd64 (1.20-1+b1) ...
 Setting up libtiff5:amd64 (4.4.0-4) ...
 Setting up libusb-1.0-0:amd64 (2:1.0.26-1) ...
 Setting up dos2unix (7.4.3-1) ...
-Setting up libtsan2:amd64 (12.1.0-8) ...
+Setting up libtsan2:amd64 (12.2.0-3) ...
 Setting up sbsigntool (0.9.4-3.1) ...
-Setting up libbinutils:amd64 (2.38.90.20220713-2) ...
-Setting up libfido2-1:amd64 (1.11.0-1+b1) ...
+Setting up libbinutils:amd64 (2.39-8) ...
+Setting up libfido2-1:amd64 (1.12.0-1) ...
 Setting up libisl23:amd64 (0.25-1) ...
 Setting up libefivar-dev:amd64 (37-6) ...
-Setting up libc-dev-bin (2.34-3) ...
-Setting up openssl (3.0.5-2) ...
-Setting up libbsd0:amd64 (0.11.6-1) ...
-Setting up libelf1:amd64 (0.187-1) ...
-Setting up readline-common (8.1.2-1.2) ...
-Setting up publicsuffix (20220614.1839-1) ...
+Setting up libc-dev-bin (2.35-3) ...
+Setting up openssl (3.0.5-4) ...
+Setting up libbsd0:amd64 (0.11.7-1) ...
+Setting up libelf1:amd64 (0.187-4) ...
+Setting up readline-common (8.2-1) ...
+Setting up publicsuffix (20220811.1734-1) ...
 Setting up libxml2:amd64 (2.9.14+dfsg-1+b1) ...
-Setting up libcc1-0:amd64 (12.1.0-8) ...
+Setting up libcc1-0:amd64 (12.2.0-3) ...
 Setting up efitools (1.9.2-3) ...
 Setting up liblocale-gettext-perl (1.07-4+b2) ...
-Setting up liblsan0:amd64 (12.1.0-8) ...
-Setting up libitm1:amd64 (12.1.0-8) ...
-Setting up libgdbm6:amd64 (1.23-1) ...
-Setting up libpopt0:amd64 (1.18-3) ...
-Setting up libctf0:amd64 (2.38.90.20220713-2) ...
-Setting up pinentry-curses (1.2.0-2) ...
+Setting up liblsan0:amd64 (12.2.0-3) ...
+Setting up libitm1:amd64 (12.2.0-3) ...
+Setting up libgdbm6:amd64 (1.23-3) ...
+Setting up libpopt0:amd64 (1.19+dfsg-1) ...
+Setting up libctf0:amd64 (2.39-8) ...
+Setting up pinentry-curses (1.2.1-1) ...
 Setting up manpages-dev (5.13-1) ...
 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
-Setting up cpp-12 (12.1.0-8) ...
+Setting up cpp-12 (12.2.0-3) ...
 Setting up libxcb1:amd64 (1.15-1) ...
 Setting up libccid (1.5.0-2) ...
 invoke-rc.d: unknown initscript, /etc/init.d/pcscd not found.
 invoke-rc.d: could not determine current runlevel
-Setting up libedit2:amd64 (3.1-20210910-1) ...
-Setting up libreadline8:amd64 (8.1.2-1.2) ...
-Setting up opensc (0.22.0-2+b1) ...
-Setting up libsasl2-modules:amd64 (2.1.28+dfsg-6) ...
-Setting up pcscd (1.9.8-1) ...
+Setting up libedit2:amd64 (3.1-20221009-1) ...
+Setting up libreadline8:amd64 (8.2-1) ...
+Setting up opensc (0.22.0-2.1) ...
+Setting up libsasl2-modules:amd64 (2.1.28+dfsg-8) ...
+Setting up pcscd (1.9.9-1) ...
 invoke-rc.d: could not determine current runlevel
 invoke-rc.d: policy-rc.d denied execution of start.
 Setting up libefiboot1:amd64 (37-6) ...
-Setting up libnss3:amd64 (2:3.79-1) ...
-Setting up libldap-2.5-0:amd64 (2.5.12+dfsg-2+b1) ...
+Setting up libnss3:amd64 (2:3.83-1) ...
+Setting up libldap-2.5-0:amd64 (2.5.13+dfsg-2) ...
 Setting up coolkey (1.1.0-16) ...
 Setting up ca-certificates (20211016) ...
 Updating certificates in /etc/ssl/certs...
 127 added, 0 removed; done.
-Setting up libgprofng0:amd64 (2.38.90.20220713-2) ...
+Setting up libgprofng0:amd64 (2.39-8) ...
 Setting up libfreetype6:amd64 (2.12.1+dfsg-3) ...
-Setting up libgcc-12-dev:amd64 (12.1.0-8) ...
+Setting up libgcc-12-dev:amd64 (12.2.0-3) ...
 Setting up shared-mime-info (2.2-1) ...
-Setting up libgssapi-krb5-2:amd64 (1.20-1) ...
-Setting up libgdbm-compat4:amd64 (1.23-1) ...
+Setting up libgssapi-krb5-2:amd64 (1.20-1+b1) ...
+Setting up libgdbm-compat4:amd64 (1.23-3) ...
 Setting up ucf (3.0043) ...
-Setting up cpp (4:12.1.0-3) ...
-Setting up gpgconf (2.2.35-3) ...
+Setting up cpp (4:12.2.0-1) ...
+Setting up gpgconf (2.2.40-1) ...
 Setting up libx11-6:amd64 (2:1.8.1-2) ...
 Setting up libxmuu1:amd64 (2:1.1.3-3) ...
-Setting up gpg (2.2.35-3) ...
-Setting up libnss3-tools (2:3.79-1) ...
-Setting up gnupg-utils (2.2.35-3) ...
-Setting up binutils-x86-64-linux-gnu (2.38.90.20220713-2) ...
+Setting up gpg (2.2.40-1) ...
+Setting up libnss3-tools (2:3.83-1) ...
+Setting up gnupg-utils (2.2.40-1) ...
+Setting up binutils-x86-64-linux-gnu (2.39-8) ...
 Setting up libtirpc3:amd64 (1.3.3+ds-1) ...
 Setting up efibootmgr (17-1) ...
 Setting up libperl5.34:amd64 (5.34.0-5) ...
-Setting up gpg-agent (2.2.35-3) ...
+Setting up gpg-agent (2.2.40-1) ...
 Setting up libxpm4:amd64 (1:3.5.12-1) ...
-Setting up fontconfig-config (2.13.1-4.4) ...
-Setting up openssh-client (1:9.0p1-1+b1) ...
+Setting up fontconfig-config (2.13.1-4.5) ...
+Setting up openssh-client (1:9.0p1-1+b2) ...
 update-alternatives: using /usr/bin/ssh to provide /usr/bin/rsh (rsh) in auto mode
 update-alternatives: warning: skip creation of /usr/share/man/man1/rsh.1.gz because associated file /usr/share/man/man1/ssh.1.gz (of link group rsh) doesn't exist
 update-alternatives: using /usr/bin/slogin to provide /usr/bin/rlogin (rlogin) in auto mode
 update-alternatives: warning: skip creation of /usr/share/man/man1/rlogin.1.gz because associated file /usr/share/man/man1/slogin.1.gz (of link group rlogin) doesn't exist
 update-alternatives: using /usr/bin/scp to provide /usr/bin/rcp (rcp) in auto mode
 update-alternatives: warning: skip creation of /usr/share/man/man1/rcp.1.gz because associated file /usr/share/man/man1/scp.1.gz (of link group rcp) doesn't exist
-Setting up gpgsm (2.2.35-3) ...
-Setting up libxext6:amd64 (2:1.3.4-1) ...
+Setting up gpgsm (2.2.40-1) ...
+Setting up libxext6:amd64 (2:1.3.4-1+b1) ...
 Setting up pesign (0.112-6) ...
-Setting up libcurl3-gnutls:amd64 (7.84.0-2) ...
-Setting up binutils (2.38.90.20220713-2) ...
-Setting up dirmngr (2.2.35-3) ...
+Setting up libcurl3-gnutls:amd64 (7.85.0-1) ...
+Setting up binutils (2.39-8) ...
+Setting up dirmngr (2.2.40-1) ...
 Setting up perl (5.34.0-5) ...
 Setting up libtirpc-dev:amd64 (1.3.3+ds-1) ...
-Setting up gcc-12 (12.1.0-8) ...
+Setting up gcc-12 (12.2.0-3) ...
 Setting up libdpkg-perl (1.21.9) ...
-Setting up gpg-wks-server (2.2.35-3) ...
+Setting up gpg-wks-server (2.2.40-1) ...
 Setting up xauth (1:1.1.1-1) ...
 Setting up libnsl2:amd64 (1.3.0-2) ...
-Setting up gpg-wks-client (2.2.35-3) ...
+Setting up libfontconfig1:amd64 (2.13.1-4.5) ...
+Setting up gpg-wks-client (2.2.40-1) ...
 Setting up libfile-fcntllock-perl (0.22-4) ...
 Setting up libalgorithm-diff-perl (1.201-1) ...
-Setting up gcc (4:12.1.0-3) ...
+Setting up gcc (4:12.2.0-1) ...
 Setting up dpkg-dev (1.21.9) ...
-Setting up liberror-perl (0.17029-1) ...
+Setting up liberror-perl (0.17029-2) ...
+Setting up libgd3:amd64 (2.3.3-6) ...
 Setting up git (1:2.35.1-1) ...
 Setting up libnsl-dev:amd64 (1.3.0-2) ...
-Setting up gnupg (2.2.35-3) ...
-Setting up libc6-dev:amd64 (2.34-3) ...
-Setting up libalgorithm-diff-xs-perl:amd64 (0.04-7) ...
-Setting up libalgorithm-merge-perl (0.08-4) ...
-Setting up libstdc++-12-dev:amd64 (12.1.0-8) ...
-Setting up libpopt-dev:amd64 (1.18-3) ...
-Setting up uuid-dev:amd64 (2.38.1-1) ...
-Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-4) ...
-Setting up g++-12 (12.1.0-8) ...
-Setting up libelf-dev:amd64 (0.187-1) ...
-Setting up g++ (4:12.1.0-3) ...
+Setting up gnupg (2.2.40-1) ...
+Setting up libc6-dev:amd64 (2.35-3) ...
+Setting up libalgorithm-diff-xs-perl:amd64 (0.04-8) ...
+Setting up libc-devtools (2.35-3) ...
+Setting up libalgorithm-merge-perl (0.08-5) ...
+Setting up libstdc++-12-dev:amd64 (12.2.0-3) ...
+Setting up libpopt-dev:amd64 (1.19+dfsg-1) ...
+Setting up uuid-dev:amd64 (2.38.1-1.1+b1) ...
+Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-4.1) ...
+Setting up g++-12 (12.2.0-3) ...
+Setting up libelf-dev:amd64 (0.187-4) ...
+Setting up g++ (4:12.2.0-1) ...
 update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
 Setting up build-essential (12.9) ...
-Processing triggers for libc-bin (2.34-3) ...
-Processing triggers for sgml-base (1.30) ...
-Setting up libfontconfig1:amd64 (2.13.1-4.4) ...
-Setting up libgd3:amd64 (2.3.3-6) ...
-Setting up libc-devtools (2.34-3) ...
+Processing triggers for libc-bin (2.35-3) ...
 Processing triggers for ca-certificates (20211016) ...
 Updating certificates in /etc/ssl/certs...
 0 added, 0 removed; done.
 Running hooks in /etc/ca-certificates/update.d...
 done.
-Processing triggers for libc-bin (2.34-3) ...
-Removing intermediate container 70b16d169625
- ---> a8b42ffba8ad
+Removing intermediate container a37943eb2114
+ ---> 7ec60d1cb0ee
 Step 5/30 : WORKDIR /build
- ---> Running in 98fa3d8ef75e
-Removing intermediate container 98fa3d8ef75e
- ---> e1a67ba5e997
-Step 6/30 : RUN git clone -b fixmestick-shim-ia32-x64-20220817 https://github.com/coreyvelan/shim-review.git
- ---> Running in b31b64382beb
+ ---> Running in bf5d1586e4a5
+Removing intermediate container bf5d1586e4a5
+ ---> 101f4943daba
+Step 6/30 : RUN git clone https://github.com/coreyvelan/shim-review.git
+ ---> Running in 1239cbdd5a79
 [91mCloning into 'shim-review'...
-[0m[91mNote: switching to '9037776ac116b26fb1625378a1a951f5fa2b8a87'.
+[0mRemoving intermediate container 1239cbdd5a79
+ ---> 9b2051ee92d6
+Step 7/30 : RUN git clone https://github.com/rhboot/shim.git
+ ---> Running in 2d483768c051
+[91mCloning into 'shim'...
+[0mRemoving intermediate container 2d483768c051
+ ---> 60f792651038
+Step 8/30 : WORKDIR /build/shim
+ ---> Running in ea6215081cc8
+Removing intermediate container ea6215081cc8
+ ---> 9bc784d98703
+Step 9/30 : RUN git checkout 5c537b3d0cf8c393dad2e61d49aade68f3af1401
+ ---> Running in a19364e71c35
+[91mNote: switching to '5c537b3d0cf8c393dad2e61d49aade68f3af1401'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
@@ -820,1156 +777,33 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-[0mRemoving intermediate container b31b64382beb
- ---> 67a624672bc9
-Step 7/30 : RUN wget https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
- ---> Running in a588b17fd74d
-[91m--2022-08-17 21:52:18--  https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
-[0m[91mResolving github.com (github.com)... [0m[91m140.82.113.4
-Connecting to github.com (github.com)|140.82.113.4|:443... [0m[91mconnected.
-[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
-Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/3996476/2df141a4-ba87-4485-8b0b-1421c8700232?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220817%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220817T215218Z&X-Amz-Expires=300&X-Amz-Signature=8b3d542b7f37ab4b761587de4a299c0796384c35c94262c7d537a71429f7f057&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=3996476&response-content-disposition=attachment%3B%20filename%3Dshim-15.6.tar.bz2&response-content-type=application%2Foctet-stream [following]
---2022-08-17 21:52:18--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/3996476/2df141a4-ba87-4485-8b0b-1421c8700232?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220817%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220817T215218Z&X-Amz-Expires=300&X-Amz-Signature=8b3d542b7f37ab4b761587de4a299c0796384c35c94262c7d537a71429f7f057&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=3996476&response-content-disposition=attachment%3B%20filename%3Dshim-15.6.tar.bz2&response-content-type=application%2Foctet-stream
-Resolving objects.githubusercontent.com (objects.githubusercontent.com)... [0m[91m185.199.109.133, 185.199.110.133, 185.199.111.133, ...
-Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.109.133|:443... [0m[91mconnected.
-[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
-[0m[91mLength: [0m[91m1343748[0m[91m (1.3M)[0m[91m [application/octet-stream]
-[0m[91mSaving to: 'shim-15.6.tar.bz2'
-[0m[91m
-     0K ......[0m[91m...[0m[91m. ...[0m[91m..[0m[91m.[0m[91m.[0m[91m.[0m[91m..[0m[91m [0m[91m.[0m[91m....[0m[91m.[0m[91m.... [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m....[0m[91m..[0m[91m .[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m...[0m[91m..  3% 4.19M 0s
-    50K .......... ....[0m[91m...... ..........[0m[91m .........[0m[91m.[0m[91m [0m[91m.[0m[91m.....[0m[91m....  7% 5.46M 0s
-   100K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 11% 21.6M 0s
-   150K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........[0m[91m 15% 31.1M 0s
-   200K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 19% 7.43M 0s
-   250K ......[0m[91m.... .......... .........[0m[91m. .......[0m[91m... .......... 22% 41.3M 0s
-   300K ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... .......... 26% 36.5M 0s
-   350K .[0m[91m......... .......... .....[0m[91m..... .......... .......... 30% 29.6M 0s
-   400K .......... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......... 34% 55.6M 0s
-   450K .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......... .......... 38% 9.79M 0s
-   500K .......... .[0m[91m......... .......... .[0m[91m......... .......[0m[91m... 41% 34.0M 0s
-   550K .....[0m[91m..... ...[0m[91m....... .[0m[91m......... .....[0m[91m..[0m[91m... .....[0m[91m..... 45% 86.0M 0s
-   600K .......... .[0m[91m......... .......... .......... ...[0m[91m....... 49%  147M 0s
-   650K .........[0m[91m. .......[0m[91m..[0m[91m. .....[0m[91m..... .......... .[0m[91m......... 53% 75.8M 0s
-   700K .......[0m[91m... .......... ...[0m[91m....... .........[0m[91m. .......... 57% 48.4M 0s
-   750K .....[0m[91m..... ...[0m[91m....... .[0m[91m...[0m[91m...[0m[91m... .......... ...[0m[91m....... 60%  101M 0s
-   800K .[0m[91m........[0m[91m. .......... .....[0m[91m..... .......... .........[0m[91m. 64%  117M 0s
-   850K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .....[0m[91m....[0m[91m. ........[0m[91m.. 68%  103M 0s
-   900K .....[0m[91m..... .......... .[0m[91m........[0m[91m.[0m[91m .......[0m[91m... .....[0m[91m..... 72%[0m[91m 74.1M 0s
-   950K ...[0m[91m....... .[0m[91m........[0m[91m. ..[0m[91m........ .....[0m[91m..... .......... 76% 10.7M 0s
-  1000K .[0m[91m......... .......[0m[91m... .......... .......... .[0m[91m......... 80%  103M 0s
-  1050K .......... .....[0m[91m..... .......... .[0m[91m......... .[0m[91m......... 83%  155M 0s
-  1100K .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......[0m[91m... .....[0m[91m..... 87% 68.4M 0s
-  1150K .......... .[0m[91m......... .......... .....[0m[91m..... .[0m[91m..[0m[91m....... 91%  126M 0s
-  1200K .........[0m[91m. .......[0m[91m... ...[0m[91m..[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. 95% 99.5M 0s
-  1250K ..[0m[91m.....[0m[91m... .....[0m[91m..... ...[0m[91m....[0m[91m... .........[0m[91m. .......[0m[91m... 99%[0m[91m  149M 0s
-  1300K .......... ..                                         100%  137M=0.05s
-
-[0m[91m2022-08-17 21:52:18 (23.6 MB/s) - 'shim-15.6.tar.bz2' saved [1343748/1343748]
-
-[0mRemoving intermediate container a588b17fd74d
- ---> b5cc70a52dd8
-Step 8/30 : RUN tar -xvjf shim-15.6.tar.bz2
- ---> Running in 04b70f98aa1c
-shim-15.6/
-shim-15.6/commit
-shim-15.6/version.h
-shim-15.6/version.c.in
-shim-15.6/tpm.c
-shim-15.6/testplan.txt
-shim-15.6/test.c
-shim-15.6/test-str.c
-shim-15.6/test-sbat.c
-shim-15.6/test-mok-mirror.c
-shim-15.6/test-mock-variables.c
-shim-15.6/test-load-options.c
-shim-15.6/test-data/
-shim-15.6/test-data/efivars-1/
-shim-15.6/test-data/efivars-1/dbxDefault-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/dbx-d719b2cb-3d3a-4596-a3bc-dad00e67656f
-shim-15.6/test-data/efivars-1/dbDefault-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/db-d719b2cb-3d3a-4596-a3bc-dad00e67656f
-shim-15.6/test-data/efivars-1/WriteOnceStatus-4b3082a3-80c6-4d7e-9cd0-583917265df1
-shim-15.6/test-data/efivars-1/WpBufAddr-cba83c4a-a5fc-48a8-b3a6-d33636166544
-shim-15.6/test-data/efivars-1/VendorKeys-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/VARSTORE_OCMR_SETTINGS_NAME-c05fba7d-7a92-49e0-bcee-233b14dca803
-shim-15.6/test-data/efivars-1/UsbSupport-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/TpmServFlags-7d3dceee-cbce-4ea7-8709-6e552f1edbde
-shim-15.6/test-data/efivars-1/TotalNumberOfRootBridges-fb5703f5-f8a7-f401-18b4-3f108deb2612
-shim-15.6/test-data/efivars-1/Timeout-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/TPMPERBIOSFLAGS-7d3dceee-cbce-4ea7-8709-6e552f1edbde
-shim-15.6/test-data/efivars-1/StdDefaults-4599d26f-1a11-49b8-b91f-858745cff824
-shim-15.6/test-data/efivars-1/SmbiosV3EntryPointTable-4b3082a3-80c6-4d7e-9cd0-583917265df1
-shim-15.6/test-data/efivars-1/SmbiosScratchBuffer-4b3082a3-80c6-4d7e-9cd0-583917265df1
-shim-15.6/test-data/efivars-1/SmbiosEntryPointTable-4b3082a3-80c6-4d7e-9cd0-583917265df1
-shim-15.6/test-data/efivars-1/SignatureSupport-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/SetupMode-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/SetupLedData-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/Setup-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/SecureBootSetup-7b59104a-c00d-4158-87ff-f04d6396a915
-shim-15.6/test-data/efivars-1/SecureBoot-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/SbatLevelRT-605dab50-e046-4300-abb6-3dd810dd8b23
-shim-15.6/test-data/efivars-1/SbatLevel-605dab50-e046-4300-abb6-3dd810dd8b23
-shim-15.6/test-data/efivars-1/SIDSUPPORT-7d3dceee-cbce-4ea7-8709-6e552f1edbde
-shim-15.6/test-data/efivars-1/RsdpAddr-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/PreVgaInfo-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/PlatformLangCodes-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/PlatformLang-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/PcieSataModVar-5e9a565f-cdc0-413b-ad13-1fe8713ffdcd
-shim-15.6/test-data/efivars-1/PKDefault-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/PK-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/PCI_COMMON-aca9f304-21e2-4852-9875-7ff4881d67a5
-shim-15.6/test-data/efivars-1/OsIndicationsSupported-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/OsIndications-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/NvHdd8-e57abcbd-9456-4639-8f65-06aab41d840f
-shim-15.6/test-data/efivars-1/NvHdd0-e57abcbd-9456-4639-8f65-06aab41d840f
-shim-15.6/test-data/efivars-1/NetworkStackVar-d1405d16-7afc-4695-bb12-41459d3695a2
-shim-15.6/test-data/efivars-1/NVRAM_Verify-15a9dd61-e4f8-4a99-80db-353b13d76490
-shim-15.6/test-data/efivars-1/MyFav-4034591c-48ea-4cdc-864f-e7cb61cfd0f2
-shim-15.6/test-data/efivars-1/MonotonicCounter-01368881-c4ad-4b1d-b631-d57a8ec8db6b
-shim-15.6/test-data/efivars-1/MokListXRT-605dab50-e046-4300-abb6-3dd810dd8b23
-shim-15.6/test-data/efivars-1/MokListX-605dab50-e046-4300-abb6-3dd810dd8b23
-shim-15.6/test-data/efivars-1/MokListRT-605dab50-e046-4300-abb6-3dd810dd8b23
-shim-15.6/test-data/efivars-1/MokList-605dab50-e046-4300-abb6-3dd810dd8b23
-shim-15.6/test-data/efivars-1/MemoryOverwriteRequestControlLock-bb983ccf-151d-40e1-a07b-4a17be168292
-shim-15.6/test-data/efivars-1/MemoryOverwriteRequestControl-e20939be-32d4-41be-a150-897f85d49829
-shim-15.6/test-data/efivars-1/MaximumTableSize-4b3082a3-80c6-4d7e-9cd0-583917265df1
-shim-15.6/test-data/efivars-1/LastBoot-b540a530-6978-4da7-91cb-7207d764d262
-shim-15.6/test-data/efivars-1/Kernel_WinSiStatus-77fa9abd-0359-4d32-bd60-28f4e78f784b
-shim-15.6/test-data/efivars-1/Kernel_SkuSiStatus-77fa9abd-0359-4d32-bd60-28f4e78f784b
-shim-15.6/test-data/efivars-1/Kernel_SiStatus-77fa9abd-0359-4d32-bd60-28f4e78f784b
-shim-15.6/test-data/efivars-1/Kernel_RvkSiStatus-77fa9abd-0359-4d32-bd60-28f4e78f784b
-shim-15.6/test-data/efivars-1/Kernel_DriverSiStatus-77fa9abd-0359-4d32-bd60-28f4e78f784b
-shim-15.6/test-data/efivars-1/Kernel_ATPSiStatus-77fa9abd-0359-4d32-bd60-28f4e78f784b
-shim-15.6/test-data/efivars-1/KEKDefault-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/KEK-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/HwErrRecSupport-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/HiiDB-1b838190-4625-4ead-abc9-cd5e6af18fe0
-shim-15.6/test-data/efivars-1/HddSmartInfo-a6f44860-b2e8-4fda-bd45-78368994b6ae
-shim-15.6/test-data/efivars-1/FirstBootFlag-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/FastBootOption-b540a530-6978-4da7-91cb-7207d764d262
-shim-15.6/test-data/efivars-1/FTMActiveFlag-4034591c-48ea-4cdc-864f-e7cb61cfd0f2
-shim-15.6/test-data/efivars-1/FPLayoutOrder-4db88a62-6721-47a0-9082-280b00323594
-shim-15.6/test-data/efivars-1/ErrOut-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/EnWpData-cbab171f-f356-4009-baaa-6628353a0a29
-shim-15.6/test-data/efivars-1/DownCoreStatus-29749bad-401b-4f6d-b124-cece8c590c48
-shim-15.6/test-data/efivars-1/DeploymentModeNv-97e8965f-c761-4f48-b6e4-9ffa9cb2a2d6
-shim-15.6/test-data/efivars-1/DefaultBootOrder-45cf35f6-0d6e-4d04-856a-0370a5b16f53
-shim-15.6/test-data/efivars-1/CurrentPolicy-77fa9abd-0359-4d32-bd60-28f4e78f784b
-shim-15.6/test-data/efivars-1/ConOutDev-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/ConOut-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/ConInDev-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/ConIn-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/CMOSfailflag-c89dc9c7-5105-472c-a743-b1621e142b41
-shim-15.6/test-data/efivars-1/BootOrder-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/BootOptionSupport-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/BootFromUSB-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/BootCurrent-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/Boot0006-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/Boot0005-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/Boot0004-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/Boot0003-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/Boot0002-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/Boot0001-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/Boot0000-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-1/BiosEventLog-4034591c-48ea-4cdc-864f-e7cb61cfd0f2
-shim-15.6/test-data/efivars-1/AutoDetectData-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/AsusSetupDataBackup-1111b056-c5e9-40ca-aba3-ec172533d814
-shim-15.6/test-data/efivars-1/AsusRomLayout-7186d975-2dba-4413-81a8-9f1538faef5e
-shim-15.6/test-data/efivars-1/AsusQFanSetupData-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/AsusNodePsu-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/AsusHwmSetupOneof-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/AsusFanSetupFeatures-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/AsusExtFancard-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9
-shim-15.6/test-data/efivars-1/AsbkpInfo-cb825795-feb1-4c0b-894f-cc70f8064395
-shim-15.6/test-data/efivars-1/ApSyncFlagNv-ad3f6761-f0a3-46c8-a4cb-19b70ffdb305
-shim-15.6/test-data/efivars-1/AmiHardwareSignatureSetupUpdateCountVar-81c76078-bfde-4368-9790-570914c01a65
-shim-15.6/test-data/efivars-1/AmdSetup-3a997502-647a-4c82-998e-52ef9486a247
-shim-15.6/test-data/efivars-1/AmdAcpiVar-79941ecd-ed36-49d0-8124-e4c31ac75cd4
-shim-15.6/test-data/efivars-1/AOD_SETUP-5ed15dc0-edef-4161-9151-6014c4cc630c
-shim-15.6/test-data/efivars-1/AMITSESetup-c811fa38-42c8-4579-a9bb-60e94eddfb34
-shim-15.6/test-data/efivars-1/AMITCGPPIVAR-a8a2093b-fefa-43c1-8e62-ce526847265e
-shim-15.6/test-data/efivars-1/AMD_RAID-fe26a894-d199-47d4-8afa-070e3d54ba86
-shim-15.6/test-data/efivars-1/AMD_PBS_SETUP-a339d746-f678-49b3-9fc7-54ce0f9df226
-shim-15.6/test-data/efivars-0/
-shim-15.6/test-data/efivars-0/dbxDefault-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-0/dbx-d719b2cb-3d3a-4596-a3bc-dad00e67656f
-shim-15.6/test-data/efivars-0/dbDefault-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-0/db-d719b2cb-3d3a-4596-a3bc-dad00e67656f
-shim-15.6/test-data/efivars-0/Boot0000-8be4df61-93ca-11d2-aa0d-00e098032b8c
-shim-15.6/test-data/efivars-0/AMITCGPPIVAR-a8a2093b-fefa-43c1-8e62-ce526847265e
-shim-15.6/test-data/efivars-0/AMD_RAID-fe26a894-d199-47d4-8afa-070e3d54ba86
-shim-15.6/test-data/efivars-0/AMD_PBS_SETUP-a339d746-f678-49b3-9fc7-54ce0f9df226
-shim-15.6/test-csv.c
-shim-15.6/shim.h
-shim-15.6/shim.c
-shim-15.6/sbat.c
-shim-15.6/replacements.c
-shim-15.6/post-process-pe.c
-shim-15.6/pe.c
-shim-15.6/netboot.c
-shim-15.6/mok.c
-shim-15.6/model.c
-shim-15.6/mock-variables.c
-shim-15.6/make-certs
-shim-15.6/make-archive
-shim-15.6/load-options.c
-shim-15.6/lib/
-shim-15.6/lib/variables.c
-shim-15.6/lib/string.c
-shim-15.6/lib/simple_file.c
-shim-15.6/lib/shell.c
-shim-15.6/lib/security_policy.c
-shim-15.6/lib/print_crypto.c
-shim-15.6/lib/guid.c
-shim-15.6/lib/execute.c
-shim-15.6/lib/console.c
-shim-15.6/lib/configtable.c
-shim-15.6/lib/Makefile
-shim-15.6/include/
-shim-15.6/include/wincert.h
-shim-15.6/include/variables.h
-shim-15.6/include/ucs2.h
-shim-15.6/include/tpm.h
-shim-15.6/include/test.mk
-shim-15.6/include/test.h
-shim-15.6/include/test-data-efivars-1.h
-shim-15.6/include/test-data-efivars-0.h
-shim-15.6/include/system/
-shim-15.6/include/system/strings.h
-shim-15.6/include/system/string.h
-shim-15.6/include/system/stdlib.h
-shim-15.6/include/system/stdio.h
-shim-15.6/include/system/stdarg.h
-shim-15.6/include/system/inttypes.h
-shim-15.6/include/system/efistdarg.h
-shim-15.6/include/system/ctype.h
-shim-15.6/include/system/builtins_end_.h
-shim-15.6/include/system/builtins_begin_.h
-shim-15.6/include/system/alloca.h
-shim-15.6/include/str.h
-shim-15.6/include/simple_file.h
-shim-15.6/include/shell.h
-shim-15.6/include/security_policy.h
-shim-15.6/include/scan-build.mk
-shim-15.6/include/sbat.h
-shim-15.6/include/replacements.h
-shim-15.6/include/peimage.h
-shim-15.6/include/pe.h
-shim-15.6/include/passwordcrypt.h
-shim-15.6/include/netboot.h
-shim-15.6/include/mok.h
-shim-15.6/include/mock-variables.h
-shim-15.6/include/load-options.h
-shim-15.6/include/list.h
-shim-15.6/include/ip6config.h
-shim-15.6/include/ip4config2.h
-shim-15.6/include/httpboot.h
-shim-15.6/include/http.h
-shim-15.6/include/hexdump.h
-shim-15.6/include/guid.h
-shim-15.6/include/fanalyzer.mk
-shim-15.6/include/execute.h
-shim-15.6/include/errors.h
-shim-15.6/include/endian.h
-shim-15.6/include/efiauthenticated.h
-shim-15.6/include/crypt_blowfish.h
-shim-15.6/include/coverity.mk
-shim-15.6/include/console.h
-shim-15.6/include/configtable.h
-shim-15.6/include/compiler.h
-shim-15.6/include/asm.h
-shim-15.6/httpboot.c
-shim-15.6/globals.c
-shim-15.6/fallback.c
-shim-15.6/errlog.c
-shim-15.6/elf_x86_64_efi.lds
-shim-15.6/elf_ia64_efi.lds
-shim-15.6/elf_ia32_efi.lds
-shim-15.6/elf_arm_efi.lds
-shim-15.6/elf_aarch64_efi.lds
-shim-15.6/data/
-shim-15.6/data/sbat.csv
-shim-15.6/csv.c
-shim-15.6/crypt_blowfish.c
-shim-15.6/cert.S
-shim-15.6/buildid.c
-shim-15.6/TODO
-shim-15.6/SBAT.md
-shim-15.6/SBAT.example.md
-shim-15.6/README.tpm
-shim-15.6/README.md
-shim-15.6/README.fallback
-shim-15.6/PasswordCrypt.c
-shim-15.6/MokVars.txt
-shim-15.6/MokManager.c
-shim-15.6/Makefile
-shim-15.6/Make.rules
-shim-15.6/Make.defaults
-shim-15.6/Cryptlib/
-shim-15.6/Cryptlib/update.sh
-shim-15.6/Cryptlib/opensslconf-diff.patch
-shim-15.6/Cryptlib/SysCall/
-shim-15.6/Cryptlib/SysCall/TimerWrapper.c
-shim-15.6/Cryptlib/SysCall/CrtWrapper.c
-shim-15.6/Cryptlib/SysCall/BaseStrings.c
-shim-15.6/Cryptlib/SysCall/BaseMemAllocation.c
-shim-15.6/Cryptlib/Rand/
-shim-15.6/Cryptlib/Rand/CryptRand.c
-shim-15.6/Cryptlib/Pk/
-shim-15.6/Cryptlib/Pk/CryptX509.c
-shim-15.6/Cryptlib/Pk/CryptTs.c
-shim-15.6/Cryptlib/Pk/CryptRsaExtNull.c
-shim-15.6/Cryptlib/Pk/CryptRsaBasic.c
-shim-15.6/Cryptlib/Pk/CryptPkcs7Verify.c
-shim-15.6/Cryptlib/Pk/CryptPkcs7SignNull.c
-shim-15.6/Cryptlib/Pk/CryptDhNull.c
-shim-15.6/Cryptlib/Pk/CryptAuthenticode.c
-shim-15.6/Cryptlib/Pem/
-shim-15.6/Cryptlib/Pem/CryptPemNull.c
-shim-15.6/Cryptlib/OpenSSL/
-shim-15.6/Cryptlib/OpenSSL/update.sh
-shim-15.6/Cryptlib/OpenSSL/openssl-bio-b_print-disable-sse.patch
-shim-15.6/Cryptlib/OpenSSL/e_os.h
-shim-15.6/Cryptlib/OpenSSL/crypto/
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_utl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_sxnet.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_skey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_purp.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_prn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_pmaps.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_pku.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_pcons.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_pcia.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_pci.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_ocsp.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_ncons.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_int.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_info.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_ia5.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_genn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_extku.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_enum.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_crld.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_cpols.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_conf.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_bitst.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_bcons.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_asid.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_alt.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_akeya.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_akey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/v3_addr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/pcy_tree.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/pcy_node.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/pcy_map.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/pcy_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/pcy_int.h
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/pcy_data.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/pcy_cache.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509v3/ext_dat.h
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x_all.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509type.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509spki.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509rset.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509name.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509cset.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_vpm.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_vfy.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_v3.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_txt.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_trs.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_set.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_req.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_r2x.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_obj.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_lu.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_ext.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_def.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_d2.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_cmp.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/x509_att.c
-shim-15.6/Cryptlib/OpenSSL/crypto/x509/vpm_int.h
-shim-15.6/Cryptlib/OpenSSL/crypto/uid.c
-shim-15.6/Cryptlib/OpenSSL/crypto/txt_db/
-shim-15.6/Cryptlib/OpenSSL/crypto/txt_db/txt_db.c
-shim-15.6/Cryptlib/OpenSSL/crypto/stack/
-shim-15.6/Cryptlib/OpenSSL/crypto/stack/stack.c
-shim-15.6/Cryptlib/OpenSSL/crypto/sha/
-shim-15.6/Cryptlib/OpenSSL/crypto/sha/sha_one.c
-shim-15.6/Cryptlib/OpenSSL/crypto/sha/sha_locl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/sha/sha_dgst.c
-shim-15.6/Cryptlib/OpenSSL/crypto/sha/sha512.c
-shim-15.6/Cryptlib/OpenSSL/crypto/sha/sha256.c
-shim-15.6/Cryptlib/OpenSSL/crypto/sha/sha1dgst.c
-shim-15.6/Cryptlib/OpenSSL/crypto/sha/sha1_one.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_x931.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_ssl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_sign.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_saos.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_pss.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_prn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_pmeth.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_pk1.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_oaep.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_null.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_none.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_locl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_gen.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_eay.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_depr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_crpt.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_chk.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_asn1.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rsa/rsa_ameth.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rc4/
-shim-15.6/Cryptlib/OpenSSL/crypto/rc4/rc4_utl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rc4/rc4_skey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rc4/rc4_locl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/rc4/rc4_enc.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rand/
-shim-15.6/Cryptlib/OpenSSL/crypto/rand/randfile.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rand/rand_unix.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rand/rand_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rand/rand_lcl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/rand/rand_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/rand/md_rand.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs7/
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs7/pkcs7err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs7/pk7_smime.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs7/pk7_mime.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs7/pk7_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs7/pk7_doit.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs7/pk7_attr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs7/pk7_asn1.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs7/bio_pk7.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/pk12err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_utl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_p8e.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_p8d.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_npas.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_mutl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_kiss.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_key.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_init.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_decr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_crt.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_crpt.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_attr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_asn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pkcs12/p12_add.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pvkfmt.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_xaux.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_x509.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_sign.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_seal.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_pkey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_pk8.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_oth.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_info.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/pem/pem_all.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/ocsp_vfy.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/ocsp_srv.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/ocsp_prn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/ocsp_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/ocsp_ht.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/ocsp_ext.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/ocsp_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/ocsp_cl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ocsp/ocsp_asn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/objects/
-shim-15.6/Cryptlib/OpenSSL/crypto/objects/obj_xref.h
-shim-15.6/Cryptlib/OpenSSL/crypto/objects/obj_xref.c
-shim-15.6/Cryptlib/OpenSSL/crypto/objects/obj_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/objects/obj_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/objects/obj_dat.h
-shim-15.6/Cryptlib/OpenSSL/crypto/objects/obj_dat.c
-shim-15.6/Cryptlib/OpenSSL/crypto/objects/o_names.c
-shim-15.6/Cryptlib/OpenSSL/crypto/o_time.h
-shim-15.6/Cryptlib/OpenSSL/crypto/o_time.c
-shim-15.6/Cryptlib/OpenSSL/crypto/o_str.h
-shim-15.6/Cryptlib/OpenSSL/crypto/o_str.c
-shim-15.6/Cryptlib/OpenSSL/crypto/o_init.c
-shim-15.6/Cryptlib/OpenSSL/crypto/o_fips.c
-shim-15.6/Cryptlib/OpenSSL/crypto/o_dir.h
-shim-15.6/Cryptlib/OpenSSL/crypto/o_dir.c
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/xts128.c
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/wrap128.c
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/ofb128.c
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/modes_lcl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/gcm128.c
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/cts128.c
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/ctr128.c
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/cfb128.c
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/ccm128.c
-shim-15.6/Cryptlib/OpenSSL/crypto/modes/cbc128.c
-shim-15.6/Cryptlib/OpenSSL/crypto/mem_dbg.c
-shim-15.6/Cryptlib/OpenSSL/crypto/mem_clr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/mem.c
-shim-15.6/Cryptlib/OpenSSL/crypto/md5/
-shim-15.6/Cryptlib/OpenSSL/crypto/md5/md5_one.c
-shim-15.6/Cryptlib/OpenSSL/crypto/md5/md5_locl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/md5/md5_dgst.c
-shim-15.6/Cryptlib/OpenSSL/crypto/md32_common.h
-shim-15.6/Cryptlib/OpenSSL/crypto/lhash/
-shim-15.6/Cryptlib/OpenSSL/crypto/lhash/lhash.c
-shim-15.6/Cryptlib/OpenSSL/crypto/lhash/lh_stats.c
-shim-15.6/Cryptlib/OpenSSL/crypto/hmac/
-shim-15.6/Cryptlib/OpenSSL/crypto/hmac/hmac.c
-shim-15.6/Cryptlib/OpenSSL/crypto/hmac/hm_pmeth.c
-shim-15.6/Cryptlib/OpenSSL/crypto/hmac/hm_ameth.c
-shim-15.6/Cryptlib/OpenSSL/crypto/fips_ers.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ex_data.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/pmeth_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/pmeth_gn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/pmeth_fn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/p_verify.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/p_sign.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/p_seal.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/p_open.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/p_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/p_enc.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/p_dec.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/p5_crpt2.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/p5_crpt.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/names.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_wp.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_sigver.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_sha1.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_sha.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_ripemd.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_null.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_mdc2.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_md5.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_md4.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_md2.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_ecdsa.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_dss1.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/m_dss.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/evp_pkey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/evp_pbe.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/evp_locl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/evp_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/evp_key.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/evp_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/evp_enc.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/evp_cnf.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/evp_acnf.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/encode.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_xcbc_d.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_seed.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_rc5.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_rc4_hmac_md5.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_rc4.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_rc2.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_old.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_null.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_idea.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_des3.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_des.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_cast.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_camellia.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_bf.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_aes_cbc_hmac_sha256.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_aes_cbc_hmac_sha1.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/e_aes.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/digest.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/c_alld.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/c_allc.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/c_all.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/bio_ok.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/bio_md.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/bio_enc.c
-shim-15.6/Cryptlib/OpenSSL/crypto/evp/bio_b64.c
-shim-15.6/Cryptlib/OpenSSL/crypto/err/
-shim-15.6/Cryptlib/OpenSSL/crypto/err/err_prn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/err/err_all.c
-shim-15.6/Cryptlib/OpenSSL/crypto/err/err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/ebcdic.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/dso_win32.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/dso_vms.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/dso_openssl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/dso_null.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/dso_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/dso_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/dso_dlfcn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/dso_dl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dso/dso_beos.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_rfc5114.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_prn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_pmeth.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_key.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_gen.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_depr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_check.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_asn1.c
-shim-15.6/Cryptlib/OpenSSL/crypto/dh/dh_ameth.c
-shim-15.6/Cryptlib/OpenSSL/crypto/cversion.c
-shim-15.6/Cryptlib/OpenSSL/crypto/cryptlib.h
-shim-15.6/Cryptlib/OpenSSL/crypto/cryptlib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/cpt_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/constant_time_locl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/conf/
-shim-15.6/Cryptlib/OpenSSL/crypto/conf/conf_sap.c
-shim-15.6/Cryptlib/OpenSSL/crypto/conf/conf_mod.c
-shim-15.6/Cryptlib/OpenSSL/crypto/conf/conf_mall.c
-shim-15.6/Cryptlib/OpenSSL/crypto/conf/conf_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/conf/conf_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/conf/conf_def.h
-shim-15.6/Cryptlib/OpenSSL/crypto/conf/conf_def.c
-shim-15.6/Cryptlib/OpenSSL/crypto/conf/conf_api.c
-shim-15.6/Cryptlib/OpenSSL/crypto/comp/
-shim-15.6/Cryptlib/OpenSSL/crypto/comp/comp_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/comp/comp_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/comp/c_zlib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/comp/c_rle.c
-shim-15.6/Cryptlib/OpenSSL/crypto/cmac/
-shim-15.6/Cryptlib/OpenSSL/crypto/cmac/cmac.c
-shim-15.6/Cryptlib/OpenSSL/crypto/cmac/cm_pmeth.c
-shim-15.6/Cryptlib/OpenSSL/crypto/cmac/cm_ameth.c
-shim-15.6/Cryptlib/OpenSSL/crypto/buffer/
-shim-15.6/Cryptlib/OpenSSL/crypto/buffer/buffer.c
-shim-15.6/Cryptlib/OpenSSL/crypto/buffer/buf_str.c
-shim-15.6/Cryptlib/OpenSSL/crypto/buffer/buf_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/rsaz_exp.h
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_x931p.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_word.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_sqrt.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_sqr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_shift.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_recp.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_rand.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_print.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_prime.h
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_prime.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_nist.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_mul.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_mpi.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_mont.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_mod.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_lcl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_kron.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_gf2m.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_gcd.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_exp2.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_exp.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_div.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_depr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_ctx.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_const.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_blind.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_asm.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn_add.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bn/bn.h
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_sock.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_null.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_mem.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_log.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_file.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_fd.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_dgram.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_conn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_bio.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bss_acpt.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bio_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bio_lcl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bio_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bio_cb.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bf_null.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bf_nbio.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/bf_buff.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/b_sock.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/b_print.c
-shim-15.6/Cryptlib/OpenSSL/crypto/bio/b_dump.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_x509a.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_x509.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_val.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_spki.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_sig.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_req.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_pubkey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_pkey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_nx509.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_name.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_long.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_info.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_exten.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_crl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_bignum.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_attrib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/x_algor.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/tasn_utl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/tasn_typ.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/tasn_prn.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/tasn_new.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/tasn_fre.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/tasn_enc.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/tasn_dec.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/t_x509a.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/t_x509.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/t_spki.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/t_req.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/t_pkey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/t_crl.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/t_bitst.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/p8_pkey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/p5_pbev2.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/p5_pbe.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/nsseq.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/n_pkey.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/i2d_pu.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/i2d_pr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/f_string.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/f_int.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/f_enum.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/evp_asn1.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/d2i_pu.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/d2i_pr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/charmap.h
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/bio_ndef.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/bio_asn1.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/asn_pack.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/asn_moid.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/asn_mime.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/asn1_par.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/asn1_locl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/asn1_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/asn1_gen.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/asn1_err.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/ameth_lib.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_verify.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_utf8.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_utctm.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_type.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_time.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_strnid.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_strex.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_sign.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_set.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_print.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_octet.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_object.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_mbstr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_int.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_i2d_fp.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_gentm.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_enum.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_dup.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_digest.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_d2i_fp.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_bytes.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_bool.c
-shim-15.6/Cryptlib/OpenSSL/crypto/asn1/a_bitstr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_wrap.c
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_ofb.c
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_misc.c
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_locl.h
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_ige.c
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_ecb.c
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_ctr.c
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_core.c
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_cfb.c
-shim-15.6/Cryptlib/OpenSSL/crypto/aes/aes_cbc.c
-shim-15.6/Cryptlib/OpenSSL/crypto/LPdir_nyi.c
-shim-15.6/Cryptlib/OpenSSL/buildinf.h
-shim-15.6/Cryptlib/OpenSSL/Makefile
-shim-15.6/Cryptlib/Makefile
-shim-15.6/Cryptlib/Library/
-shim-15.6/Cryptlib/Library/MemoryAllocationLib.h
-shim-15.6/Cryptlib/Library/DebugLib.h
-shim-15.6/Cryptlib/Library/BaseMemoryLib.h
-shim-15.6/Cryptlib/Library/BaseLib.h
-shim-15.6/Cryptlib/Library/BaseCryptLib.h
-shim-15.6/Cryptlib/InternalCryptLib.h
-shim-15.6/Cryptlib/Include/
-shim-15.6/Cryptlib/Include/unistd.h
-shim-15.6/Cryptlib/Include/time.h
-shim-15.6/Cryptlib/Include/syslog.h
-shim-15.6/Cryptlib/Include/sys/
-shim-15.6/Cryptlib/Include/sys/un.h
-shim-15.6/Cryptlib/Include/sys/types.h
-shim-15.6/Cryptlib/Include/sys/times.h
-shim-15.6/Cryptlib/Include/sys/time.h
-shim-15.6/Cryptlib/Include/sys/stat.h
-shim-15.6/Cryptlib/Include/sys/socket.h
-shim-15.6/Cryptlib/Include/sys/param.h
-shim-15.6/Cryptlib/Include/sys/ioctl.h
-shim-15.6/Cryptlib/Include/stdio.h
-shim-15.6/Cryptlib/Include/signal.h
-shim-15.6/Cryptlib/Include/sgtty.h
-shim-15.6/Cryptlib/Include/openssl/
-shim-15.6/Cryptlib/Include/openssl/x509v3.h
-shim-15.6/Cryptlib/Include/openssl/x509_vfy.h
-shim-15.6/Cryptlib/Include/openssl/x509.h
-shim-15.6/Cryptlib/Include/openssl/whrlpool.h
-shim-15.6/Cryptlib/Include/openssl/ui_compat.h
-shim-15.6/Cryptlib/Include/openssl/ui.h
-shim-15.6/Cryptlib/Include/openssl/txt_db.h
-shim-15.6/Cryptlib/Include/openssl/ts.h
-shim-15.6/Cryptlib/Include/openssl/tls1.h
-shim-15.6/Cryptlib/Include/openssl/symhacks.h
-shim-15.6/Cryptlib/Include/openssl/stack.h
-shim-15.6/Cryptlib/Include/openssl/ssl3.h
-shim-15.6/Cryptlib/Include/openssl/ssl23.h
-shim-15.6/Cryptlib/Include/openssl/ssl2.h
-shim-15.6/Cryptlib/Include/openssl/ssl.h
-shim-15.6/Cryptlib/Include/openssl/srtp.h
-shim-15.6/Cryptlib/Include/openssl/srp.h
-shim-15.6/Cryptlib/Include/openssl/sha.h
-shim-15.6/Cryptlib/Include/openssl/seed.h
-shim-15.6/Cryptlib/Include/openssl/safestack.h
-shim-15.6/Cryptlib/Include/openssl/rsa.h
-shim-15.6/Cryptlib/Include/openssl/ripemd.h
-shim-15.6/Cryptlib/Include/openssl/rc4.h
-shim-15.6/Cryptlib/Include/openssl/rc2.h
-shim-15.6/Cryptlib/Include/openssl/rand.h
-shim-15.6/Cryptlib/Include/openssl/pqueue.h
-shim-15.6/Cryptlib/Include/openssl/pkcs7.h
-shim-15.6/Cryptlib/Include/openssl/pkcs12.h
-shim-15.6/Cryptlib/Include/openssl/pem2.h
-shim-15.6/Cryptlib/Include/openssl/pem.h
-shim-15.6/Cryptlib/Include/openssl/ossl_typ.h
-shim-15.6/Cryptlib/Include/openssl/opensslv.h
-shim-15.6/Cryptlib/Include/openssl/opensslconf.h
-shim-15.6/Cryptlib/Include/openssl/ocsp.h
-shim-15.6/Cryptlib/Include/openssl/objects.h
-shim-15.6/Cryptlib/Include/openssl/obj_mac.h
-shim-15.6/Cryptlib/Include/openssl/modes.h
-shim-15.6/Cryptlib/Include/openssl/mdc2.h
-shim-15.6/Cryptlib/Include/openssl/md5.h
-shim-15.6/Cryptlib/Include/openssl/md4.h
-shim-15.6/Cryptlib/Include/openssl/lhash.h
-shim-15.6/Cryptlib/Include/openssl/kssl.h
-shim-15.6/Cryptlib/Include/openssl/idea.h
-shim-15.6/Cryptlib/Include/openssl/hmac.h
-shim-15.6/Cryptlib/Include/openssl/evp.h
-shim-15.6/Cryptlib/Include/openssl/err.h
-shim-15.6/Cryptlib/Include/openssl/engine.h
-shim-15.6/Cryptlib/Include/openssl/ecdsa.h
-shim-15.6/Cryptlib/Include/openssl/ecdh.h
-shim-15.6/Cryptlib/Include/openssl/ec.h
-shim-15.6/Cryptlib/Include/openssl/ebcdic.h
-shim-15.6/Cryptlib/Include/openssl/e_os2.h
-shim-15.6/Cryptlib/Include/openssl/dtls1.h
-shim-15.6/Cryptlib/Include/openssl/dso.h
-shim-15.6/Cryptlib/Include/openssl/dsa.h
-shim-15.6/Cryptlib/Include/openssl/dh.h
-shim-15.6/Cryptlib/Include/openssl/des_old.h
-shim-15.6/Cryptlib/Include/openssl/des.h
-shim-15.6/Cryptlib/Include/openssl/crypto.h
-shim-15.6/Cryptlib/Include/openssl/conf_api.h
-shim-15.6/Cryptlib/Include/openssl/conf.h
-shim-15.6/Cryptlib/Include/openssl/comp.h
-shim-15.6/Cryptlib/Include/openssl/cms.h
-shim-15.6/Cryptlib/Include/openssl/cmac.h
-shim-15.6/Cryptlib/Include/openssl/cast.h
-shim-15.6/Cryptlib/Include/openssl/camellia.h
-shim-15.6/Cryptlib/Include/openssl/buffer.h
-shim-15.6/Cryptlib/Include/openssl/bn.h
-shim-15.6/Cryptlib/Include/openssl/blowfish.h
-shim-15.6/Cryptlib/Include/openssl/bio.h
-shim-15.6/Cryptlib/Include/openssl/asn1t.h
-shim-15.6/Cryptlib/Include/openssl/asn1_mac.h
-shim-15.6/Cryptlib/Include/openssl/asn1.h
-shim-15.6/Cryptlib/Include/openssl/aes.h
-shim-15.6/Cryptlib/Include/openssl/README
-shim-15.6/Cryptlib/Include/netinet/
-shim-15.6/Cryptlib/Include/netinet/in.h
-shim-15.6/Cryptlib/Include/netdb.h
-shim-15.6/Cryptlib/Include/memory.h
-shim-15.6/Cryptlib/Include/math.h
-shim-15.6/Cryptlib/Include/malloc.h
-shim-15.6/Cryptlib/Include/limits.h
-shim-15.6/Cryptlib/Include/errno.h
-shim-15.6/Cryptlib/Include/dirent.h
-shim-15.6/Cryptlib/Include/assert.h
-shim-15.6/Cryptlib/Include/arpa/
-shim-15.6/Cryptlib/Include/arpa/inet.h
-shim-15.6/Cryptlib/Include/Protocol/
-shim-15.6/Cryptlib/Include/Protocol/RuntimeCrypt.h
-shim-15.6/Cryptlib/Include/OpenSslSupport.h
-shim-15.6/Cryptlib/Hmac/
-shim-15.6/Cryptlib/Hmac/CryptHmacSha256Null.c
-shim-15.6/Cryptlib/Hmac/CryptHmacSha1Null.c
-shim-15.6/Cryptlib/Hmac/CryptHmacMd5Null.c
-shim-15.6/Cryptlib/Hash/
-shim-15.6/Cryptlib/Hash/CryptSha512.c
-shim-15.6/Cryptlib/Hash/CryptSha256.c
-shim-15.6/Cryptlib/Hash/CryptSha1.c
-shim-15.6/Cryptlib/Hash/CryptMd5.c
-shim-15.6/Cryptlib/Hash/CryptMd4Null.c
-shim-15.6/Cryptlib/Cryptlib.diff
-shim-15.6/Cryptlib/Cipher/
-shim-15.6/Cryptlib/Cipher/CryptTdesNull.c
-shim-15.6/Cryptlib/Cipher/CryptArc4Null.c
-shim-15.6/Cryptlib/Cipher/CryptAesNull.c
-shim-15.6/Cryptlib/Base.h
-shim-15.6/COPYRIGHT
-shim-15.6/CODE_OF_CONDUCT.md
-shim-15.6/BUILDING
-shim-15.6/.gitmodules
-shim-15.6/.gitignore
-shim-15.6/.github/
-shim-15.6/.github/workflows/
-shim-15.6/.github/workflows/pullrequest.yml
-shim-15.6/.clang-format
-shim-15.6/gnu-efi/
-shim-15.6/gnu-efi/lib/
-shim-15.6/gnu-efi/lib/x86_64/
-shim-15.6/gnu-efi/lib/x86_64/setjmp.S
-shim-15.6/gnu-efi/lib/x86_64/math.c
-shim-15.6/gnu-efi/lib/x86_64/initplat.c
-shim-15.6/gnu-efi/lib/x86_64/efi_stub.S
-shim-15.6/gnu-efi/lib/x86_64/callwrap.c
-shim-15.6/gnu-efi/lib/str.c
-shim-15.6/gnu-efi/lib/sread.c
-shim-15.6/gnu-efi/lib/smbios.c
-shim-15.6/gnu-efi/lib/runtime/
-shim-15.6/gnu-efi/lib/runtime/vm.c
-shim-15.6/gnu-efi/lib/runtime/rtstr.c
-shim-15.6/gnu-efi/lib/runtime/rtlock.c
-shim-15.6/gnu-efi/lib/runtime/rtdata.c
-shim-15.6/gnu-efi/lib/runtime/efirtlib.c
-shim-15.6/gnu-efi/lib/print.c
-shim-15.6/gnu-efi/lib/pause.c
-shim-15.6/gnu-efi/lib/misc.c
-shim-15.6/gnu-efi/lib/mips64el/
-shim-15.6/gnu-efi/lib/mips64el/setjmp.S
-shim-15.6/gnu-efi/lib/mips64el/math.c
-shim-15.6/gnu-efi/lib/mips64el/initplat.c
-shim-15.6/gnu-efi/lib/mips64el/efi_stub.S
-shim-15.6/gnu-efi/lib/lock.c
-shim-15.6/gnu-efi/lib/init.c
-shim-15.6/gnu-efi/lib/ia64/
-shim-15.6/gnu-efi/lib/ia64/setjmp.S
-shim-15.6/gnu-efi/lib/ia64/salpal.c
-shim-15.6/gnu-efi/lib/ia64/palproc.h
-shim-15.6/gnu-efi/lib/ia64/palproc.S
-shim-15.6/gnu-efi/lib/ia64/math.c
-shim-15.6/gnu-efi/lib/ia64/initplat.c
-shim-15.6/gnu-efi/lib/ia32/
-shim-15.6/gnu-efi/lib/ia32/setjmp.S
-shim-15.6/gnu-efi/lib/ia32/math.c
-shim-15.6/gnu-efi/lib/ia32/initplat.c
-shim-15.6/gnu-efi/lib/ia32/efi_stub.S
-shim-15.6/gnu-efi/lib/hw.c
-shim-15.6/gnu-efi/lib/hand.c
-shim-15.6/gnu-efi/lib/guid.c
-shim-15.6/gnu-efi/lib/exit.c
-shim-15.6/gnu-efi/lib/event.c
-shim-15.6/gnu-efi/lib/error.c
-shim-15.6/gnu-efi/lib/dpath.c
-shim-15.6/gnu-efi/lib/debug.c
-shim-15.6/gnu-efi/lib/data.c
-shim-15.6/gnu-efi/lib/crc.c
-shim-15.6/gnu-efi/lib/console.c
-shim-15.6/gnu-efi/lib/cmdline.c
-shim-15.6/gnu-efi/lib/boxdraw.c
-shim-15.6/gnu-efi/lib/arm/
-shim-15.6/gnu-efi/lib/arm/uldiv.S
-shim-15.6/gnu-efi/lib/arm/setjmp.S
-shim-15.6/gnu-efi/lib/arm/mullu.S
-shim-15.6/gnu-efi/lib/arm/math.c
-shim-15.6/gnu-efi/lib/arm/llsr.S
-shim-15.6/gnu-efi/lib/arm/llsl.S
-shim-15.6/gnu-efi/lib/arm/ldivmod.S
-shim-15.6/gnu-efi/lib/arm/initplat.c
-shim-15.6/gnu-efi/lib/arm/efi_stub.S
-shim-15.6/gnu-efi/lib/arm/edk2asm.h
-shim-15.6/gnu-efi/lib/arm/div.S
-shim-15.6/gnu-efi/lib/aarch64/
-shim-15.6/gnu-efi/lib/aarch64/setjmp.S
-shim-15.6/gnu-efi/lib/aarch64/math.c
-shim-15.6/gnu-efi/lib/aarch64/initplat.c
-shim-15.6/gnu-efi/lib/aarch64/efi_stub.S
-shim-15.6/gnu-efi/lib/Makefile.orig
-shim-15.6/gnu-efi/lib/Makefile
-shim-15.6/gnu-efi/inc/
-shim-15.6/gnu-efi/inc/x86_64/
-shim-15.6/gnu-efi/inc/x86_64/pe.h
-shim-15.6/gnu-efi/inc/x86_64/efisetjmp_arch.h
-shim-15.6/gnu-efi/inc/x86_64/efilibplat.h
-shim-15.6/gnu-efi/inc/x86_64/efibind.h
-shim-15.6/gnu-efi/inc/romload.h
-shim-15.6/gnu-efi/inc/protocol/
-shim-15.6/gnu-efi/inc/protocol/vgaclass.h
-shim-15.6/gnu-efi/inc/protocol/readme.txt
-shim-15.6/gnu-efi/inc/protocol/piflash64.h
-shim-15.6/gnu-efi/inc/protocol/legacyboot.h
-shim-15.6/gnu-efi/inc/protocol/intload.h
-shim-15.6/gnu-efi/inc/protocol/efivar.h
-shim-15.6/gnu-efi/inc/protocol/eficonsplit.h
-shim-15.6/gnu-efi/inc/protocol/adapterdebug.h
-shim-15.6/gnu-efi/inc/pci22.h
-shim-15.6/gnu-efi/inc/mips64el/
-shim-15.6/gnu-efi/inc/mips64el/efisetjmp_arch.h
-shim-15.6/gnu-efi/inc/mips64el/efilibplat.h
-shim-15.6/gnu-efi/inc/mips64el/efibind.h
-shim-15.6/gnu-efi/inc/libsmbios.h
-shim-15.6/gnu-efi/inc/lib.h
-shim-15.6/gnu-efi/inc/ia64/
-shim-15.6/gnu-efi/inc/ia64/salproc.h
-shim-15.6/gnu-efi/inc/ia64/pe.h
-shim-15.6/gnu-efi/inc/ia64/efisetjmp_arch.h
-shim-15.6/gnu-efi/inc/ia64/efilibplat.h
-shim-15.6/gnu-efi/inc/ia64/efibind.h
-shim-15.6/gnu-efi/inc/ia32/
-shim-15.6/gnu-efi/inc/ia32/pe.h
-shim-15.6/gnu-efi/inc/ia32/efisetjmp_arch.h
-shim-15.6/gnu-efi/inc/ia32/efilibplat.h
-shim-15.6/gnu-efi/inc/ia32/efibind.h
-shim-15.6/gnu-efi/inc/elf.h
-shim-15.6/gnu-efi/inc/efiui.h
-shim-15.6/gnu-efi/inc/efiudp.h
-shim-15.6/gnu-efi/inc/efitcp.h
-shim-15.6/gnu-efi/inc/efistdarg.h
-shim-15.6/gnu-efi/inc/efishellparm.h
-shim-15.6/gnu-efi/inc/efishellintf.h
-shim-15.6/gnu-efi/inc/efisetjmp.h
-shim-15.6/gnu-efi/inc/efiser.h
-shim-15.6/gnu-efi/inc/efirtlib.h
-shim-15.6/gnu-efi/inc/efipxebc.h
-shim-15.6/gnu-efi/inc/efiprot.h
-shim-15.6/gnu-efi/inc/efipoint.h
-shim-15.6/gnu-efi/inc/efipciio.h
-shim-15.6/gnu-efi/inc/efipart.h
-shim-15.6/gnu-efi/inc/efinet.h
-shim-15.6/gnu-efi/inc/efilink.h
-shim-15.6/gnu-efi/inc/efilib.h
-shim-15.6/gnu-efi/inc/efiip.h
-shim-15.6/gnu-efi/inc/efigpt.h
-shim-15.6/gnu-efi/inc/efifs.h
-shim-15.6/gnu-efi/inc/efierr.h
-shim-15.6/gnu-efi/inc/efidevp.h
-shim-15.6/gnu-efi/inc/efidef.h
-shim-15.6/gnu-efi/inc/efidebug.h
-shim-15.6/gnu-efi/inc/eficonex.h
-shim-15.6/gnu-efi/inc/eficon.h
-shim-15.6/gnu-efi/inc/eficompiler.h
-shim-15.6/gnu-efi/inc/efiapi.h
-shim-15.6/gnu-efi/inc/efi_pxe.h
-shim-15.6/gnu-efi/inc/efi_nii.h
-shim-15.6/gnu-efi/inc/efi.h
-shim-15.6/gnu-efi/inc/arm/
-shim-15.6/gnu-efi/inc/arm/efisetjmp_arch.h
-shim-15.6/gnu-efi/inc/arm/efilibplat.h
-shim-15.6/gnu-efi/inc/arm/efibind.h
-shim-15.6/gnu-efi/inc/aarch64/
-shim-15.6/gnu-efi/inc/aarch64/efisetjmp_arch.h
-shim-15.6/gnu-efi/inc/aarch64/efilibplat.h
-shim-15.6/gnu-efi/inc/aarch64/efibind.h
-shim-15.6/gnu-efi/inc/Makefile
-shim-15.6/gnu-efi/gnuefi/
-shim-15.6/gnu-efi/gnuefi/reloc_x86_64.c
-shim-15.6/gnu-efi/gnuefi/reloc_mips64el.c
-shim-15.6/gnu-efi/gnuefi/reloc_ia64.S
-shim-15.6/gnu-efi/gnuefi/reloc_ia32.c
-shim-15.6/gnu-efi/gnuefi/reloc_arm.c
-shim-15.6/gnu-efi/gnuefi/reloc_aarch64.c
-shim-15.6/gnu-efi/gnuefi/elf_x86_64_fbsd_efi.lds
-shim-15.6/gnu-efi/gnuefi/elf_x86_64_efi.lds
-shim-15.6/gnu-efi/gnuefi/elf_mips64el_efi.lds
-shim-15.6/gnu-efi/gnuefi/elf_ia64_efi.lds
-shim-15.6/gnu-efi/gnuefi/elf_ia32_fbsd_efi.lds
-shim-15.6/gnu-efi/gnuefi/elf_ia32_efi.lds
-shim-15.6/gnu-efi/gnuefi/elf_arm_efi.lds
-shim-15.6/gnu-efi/gnuefi/elf_aarch64_efi.lds
-shim-15.6/gnu-efi/gnuefi/crt0-efi-x86_64.S
-shim-15.6/gnu-efi/gnuefi/crt0-efi-mips64el.S
-shim-15.6/gnu-efi/gnuefi/crt0-efi-ia64.S
-shim-15.6/gnu-efi/gnuefi/crt0-efi-ia32.S
-shim-15.6/gnu-efi/gnuefi/crt0-efi-arm.S
-shim-15.6/gnu-efi/gnuefi/crt0-efi-aarch64.S
-shim-15.6/gnu-efi/gnuefi/Makefile
-shim-15.6/gnu-efi/apps/
-shim-15.6/gnu-efi/apps/unsetdbg.c
-shim-15.6/gnu-efi/apps/trivial.S
-shim-15.6/gnu-efi/apps/tpause.c
-shim-15.6/gnu-efi/apps/tcc.c
-shim-15.6/gnu-efi/apps/t8.c
-shim-15.6/gnu-efi/apps/t7.c
-shim-15.6/gnu-efi/apps/t6.c
-shim-15.6/gnu-efi/apps/t5.c
-shim-15.6/gnu-efi/apps/t4.c
-shim-15.6/gnu-efi/apps/t3.c
-shim-15.6/gnu-efi/apps/t2.c
-shim-15.6/gnu-efi/apps/t.c
-shim-15.6/gnu-efi/apps/setjmp.c
-shim-15.6/gnu-efi/apps/setdbg.c
-shim-15.6/gnu-efi/apps/route80h.c
-shim-15.6/gnu-efi/apps/printenv.c
-shim-15.6/gnu-efi/apps/modelist.c
-shim-15.6/gnu-efi/apps/lfbgrid.c
-shim-15.6/gnu-efi/apps/exit.c
-shim-15.6/gnu-efi/apps/drv0_use.c
-shim-15.6/gnu-efi/apps/drv0.h
-shim-15.6/gnu-efi/apps/drv0.c
-shim-15.6/gnu-efi/apps/debughook.c
-shim-15.6/gnu-efi/apps/bltgrid.c
-shim-15.6/gnu-efi/apps/Makefile
-shim-15.6/gnu-efi/apps/FreePages.c
-shim-15.6/gnu-efi/apps/AllocPages.c
-shim-15.6/gnu-efi/README.gnuefi
-shim-15.6/gnu-efi/README.git
-shim-15.6/gnu-efi/README.elilo
-shim-15.6/gnu-efi/README.efilib
-shim-15.6/gnu-efi/Makefile
-shim-15.6/gnu-efi/Make.rules
-shim-15.6/gnu-efi/Make.defaults
-shim-15.6/gnu-efi/ChangeLog
-shim-15.6/gnu-efi/.gitignore
-shim-15.6/gnu-efi/.gitattributes
-Removing intermediate container 04b70f98aa1c
- ---> b737bedc0708
-Step 9/30 : RUN mv shim-15.6 shim
- ---> Running in 54056755d65d
-Removing intermediate container 54056755d65d
- ---> 9cb72464f3e2
-Step 10/30 : WORKDIR /build/shim
- ---> Running in ea7bc0675d74
-Removing intermediate container ea7bc0675d74
- ---> 2534e257d887
+HEAD is now at 5c537b3 shim: Flush the memory region from i-cache before execution
+[0mRemoving intermediate container a19364e71c35
+ ---> 82960cb7840b
+Step 10/30 : RUN git submodule update --init --recursive
+ ---> Running in 082957e36485
+[91mSubmodule 'gnu-efi' (https://github.com/rhboot/gnu-efi.git) registered for path 'gnu-efi'
+[0m[91mCloning into '/build/shim/gnu-efi'...
+[0mSubmodule path 'gnu-efi': checked out '03670e14f263ad571bf0f39dffa9b8d23535f4d3'
+Removing intermediate container 082957e36485
+ ---> 015ad454bbea
 Step 11/30 : COPY fixmestick-codesigning.cer /build/shim
- ---> 01e97eaf3b96
+ ---> aef50b1b1d5a
 Step 12/30 : COPY sbat.fixmestick.csv /build/shim/data
- ---> a7ede0568b32
+ ---> db3270aaa840
 Step 13/30 : RUN mkdir /build/target/
- ---> Running in 4f773100f0ce
-Removing intermediate container 4f773100f0ce
- ---> 8e2be009a2b3
+ ---> Running in 6b6f2fb9284b
+Removing intermediate container 6b6f2fb9284b
+ ---> 5566bf1ce0f2
 Step 14/30 : ENV VENDOR_CERT_FILE=fixmestick-codesigning.cer
- ---> Running in 21502e6cce78
-Removing intermediate container 21502e6cce78
- ---> 4a60883733af
+ ---> Running in 46b1ef57a508
+Removing intermediate container 46b1ef57a508
+ ---> 9146ba7b98c6
 Step 15/30 : RUN make LIBDIR=/usr/lib
- ---> Running in f9c4017d7961
+ ---> Running in f8cb85e89d74
 sed	-e "s,@@VERSION@@,15.6," \
 	-e "s,@@UNAME@@,Linux x86_64 unknown unknown GNU/Linux," \
-	-e "s,@@COMMIT@@,505cdb678b319fcf9a7fdee77c0f091b4147cbe5," \
+	-e "s,@@COMMIT@@,5c537b3d0cf8c393dad2e61d49aade68f3af1401," \
 	< /build/shim/version.c.in > version.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/x86_64 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o shim.o shim.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/x86_64 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o globals.o globals.c
@@ -1989,6 +823,7 @@ objcopy --add-section .sbat=/build/shim/data/sbat.csv \
 	--set-section-flags .sbat=contents,alloc,load,readonly,data \
 	sbat_data.o
 objcopy --add-section ".sbat.fixmestick=sbat.fixmestick.csv" sbat_data.o
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/x86_64 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\" -c -o sbat_var.o sbat_var.S
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/x86_64 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o pe.o pe.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/x86_64 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o httpboot.o httpboot.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/x86_64 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o csv.o csv.c
@@ -2543,19 +1378,20 @@ make[2]: Entering directory '/build/shim/gnu-efi/x86_64/inc'
 make[2]: Nothing to be done for 'all'.
 make[2]: Leaving directory '/build/shim/gnu-efi/x86_64/inc'
 make[1]: Leaving directory '/build/shim/gnu-efi'
-ld -o shimx64.so --hash-style=sysv -nostdlib -znocombreloc -T /build/shim/elf_x86_64_efi.lds -shared -Bsymbolic -Lgnu-efi/x86_64/gnuefi -L/usr/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o --build-id=sha1  --no-undefined shim.o globals.o mok.o netboot.o cert.o replacements.o tpm.o version.o errlog.o sbat.o sbat_data.o pe.o httpboot.o csv.o load-options.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/x86_64/lib/libefi.a gnu-efi/x86_64/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/12/libgcc.a lib/lib.a
-[91mld: warning: cert.o: missing .note.GNU-stack section implies executable stack
-[0m[91mld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+ld -o shimx64.so --hash-style=sysv -nostdlib -znocombreloc -T /build/shim/elf_x86_64_efi.lds -shared -Bsymbolic -Lgnu-efi/x86_64/gnuefi -L/usr/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o --build-id=sha1  --no-undefined shim.o globals.o mok.o netboot.o cert.o replacements.o tpm.o version.o errlog.o sbat.o sbat_data.o sbat_var.o pe.o httpboot.o csv.o load-options.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/x86_64/lib/libefi.a gnu-efi/x86_64/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/12/libgcc.a lib/lib.a
+[91mld: warning: sbat_var.o: missing .note.GNU-stack section implies executable stack
+ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
 [0mgcc -std=gnu11 -Og -g3 -Wall -Wextra -Wno-missing-field-initializers -Werror -o post-process-pe /build/shim/post-process-pe.c
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
-	-j .vendor_cert -j .sbat \
+	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-x86_64 shimx64.so shimx64.efi
 ./post-process-pe -vv shimx64.efi
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
+	-j .sbatlevel \
 	-j .debug_info -j .debug_abbrev -j .debug_aranges \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
@@ -2564,11 +1400,12 @@ gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/x86_64 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o PasswordCrypt.o PasswordCrypt.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/x86_64 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o crypt_blowfish.o crypt_blowfish.c
 ld -o mmx64.so --hash-style=sysv -nostdlib -znocombreloc -T /build/shim/elf_x86_64_efi.lds -shared -Bsymbolic -Lgnu-efi/x86_64/gnuefi -L/usr/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o --build-id=sha1  --no-undefined MokManager.o PasswordCrypt.o crypt_blowfish.o errlog.o sbat_data.o globals.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/x86_64/lib/libefi.a gnu-efi/x86_64/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/12/libgcc.a lib/lib.a
-[91mld: warning: gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o: missing .note.GNU-stack section implies executable stack[0m[91m
-ld: [0m[91mNOTE: This behaviour is deprecated and will be removed in a future version of the linker
+[91mld: warning: gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o: missing .note.GNU-stack section implies executable stack
+ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
 [0mobjcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
+	-j .sbatlevel \
 	-j .debug_info -j .debug_abbrev -j .debug_aranges \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
@@ -2580,6 +1417,7 @@ ld: NOTE: This behaviour is deprecated and will be removed in a future version o
 [0mobjcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
+	-j .sbatlevel \
 	-j .debug_info -j .debug_abbrev -j .debug_aranges \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
@@ -2587,23 +1425,23 @@ ld: NOTE: This behaviour is deprecated and will be removed in a future version o
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
-	-j .vendor_cert -j .sbat \
+	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-x86_64 mmx64.so mmx64.efi
 ./post-process-pe -vv mmx64.efi
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
-	-j .vendor_cert -j .sbat \
+	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-x86_64 fbx64.so fbx64.efi
 ./post-process-pe -vv fbx64.efi
-Removing intermediate container f9c4017d7961
- ---> 709c895be94f
+Removing intermediate container f8cb85e89d74
+ ---> c5f47b44c10b
 Step 16/30 : RUN mv shimx64.efi /build/target/
- ---> Running in 0edd11ff45b5
-Removing intermediate container 0edd11ff45b5
- ---> 402acdb81c97
+ ---> Running in c35466439f7e
+Removing intermediate container c35466439f7e
+ ---> 0c80fbf586f3
 Step 17/30 : RUN make clean
- ---> Running in 73b04bb417b4
+ ---> Running in 304fa669fd04
 removed 'MokManager.o'
 removed 'PasswordCrypt.o'
 removed 'cert.o'
@@ -2620,6 +1458,7 @@ removed 'pe.o'
 removed 'replacements.o'
 removed 'sbat.o'
 removed 'sbat_data.o'
+removed 'sbat_var.o'
 removed 'shim.o'
 removed 'tpm.o'
 removed 'version.o'
@@ -2660,54 +1499,55 @@ removed 'Cryptlib/SysCall/BaseMemAllocation.o'
 removed 'Cryptlib/SysCall/BaseStrings.o'
 removed 'Cryptlib/SysCall/CrtWrapper.o'
 removed 'Cryptlib/SysCall/TimerWrapper.o'
+Removing data/sbat.fixmestick.csv
 make[1]: Entering directory '/build/shim'
 make[1]: Leaving directory '/build/shim'
 make[1]: Entering directory '/build/shim/gnu-efi'
 removed directory 'x86_64/inc'
+removed 'x86_64/lib/misc.o'
+removed 'x86_64/lib/crc.o'
+removed directory 'x86_64/lib/ia32'
+removed 'x86_64/lib/print.o'
+removed 'x86_64/lib/debug.o'
+removed 'x86_64/lib/lock.o'
+removed directory 'x86_64/lib/mips64el'
+removed 'x86_64/lib/pause.o'
+removed directory 'x86_64/lib/ia64'
+removed 'x86_64/lib/error.o'
+removed 'x86_64/lib/dpath.o'
+removed 'x86_64/lib/str.o'
+removed 'x86_64/lib/event.o'
+removed 'x86_64/lib/hand.o'
+removed 'x86_64/lib/hw.o'
+removed 'x86_64/lib/guid.o'
+removed 'x86_64/lib/libefi.a'
+removed 'x86_64/lib/boxdraw.o'
+removed 'x86_64/lib/data.o'
+removed 'x86_64/lib/sread.o'
+removed 'x86_64/lib/cmdline.o'
+removed 'x86_64/lib/exit.o'
+removed 'x86_64/lib/runtime/efirtlib.o'
+removed 'x86_64/lib/runtime/rtdata.o'
+removed 'x86_64/lib/runtime/rtlock.o'
+removed 'x86_64/lib/runtime/vm.o'
+removed 'x86_64/lib/runtime/rtstr.o'
+removed directory 'x86_64/lib/runtime'
+removed directory 'x86_64/lib/aarch64'
+removed 'x86_64/lib/console.o'
+removed 'x86_64/lib/smbios.o'
+removed directory 'x86_64/lib/arm'
+removed 'x86_64/lib/init.o'
+removed 'x86_64/lib/x86_64/efi_stub.o'
+removed 'x86_64/lib/x86_64/math.o'
+removed 'x86_64/lib/x86_64/initplat.o'
+removed 'x86_64/lib/x86_64/setjmp.o'
+removed 'x86_64/lib/x86_64/callwrap.o'
+removed directory 'x86_64/lib/x86_64'
+removed directory 'x86_64/lib'
 removed 'x86_64/gnuefi/reloc_x86_64.o'
 removed 'x86_64/gnuefi/crt0-efi-x86_64.o'
 removed 'x86_64/gnuefi/libgnuefi.a'
 removed directory 'x86_64/gnuefi'
-removed directory 'x86_64/lib/mips64el'
-removed 'x86_64/lib/x86_64/initplat.o'
-removed 'x86_64/lib/x86_64/efi_stub.o'
-removed 'x86_64/lib/x86_64/callwrap.o'
-removed 'x86_64/lib/x86_64/setjmp.o'
-removed 'x86_64/lib/x86_64/math.o'
-removed directory 'x86_64/lib/x86_64'
-removed 'x86_64/lib/smbios.o'
-removed 'x86_64/lib/event.o'
-removed 'x86_64/lib/cmdline.o'
-removed 'x86_64/lib/print.o'
-removed 'x86_64/lib/hand.o'
-removed 'x86_64/lib/libefi.a'
-removed 'x86_64/lib/crc.o'
-removed 'x86_64/lib/console.o'
-removed 'x86_64/lib/error.o'
-removed 'x86_64/lib/data.o'
-removed directory 'x86_64/lib/aarch64'
-removed directory 'x86_64/lib/ia32'
-removed 'x86_64/lib/misc.o'
-removed 'x86_64/lib/debug.o'
-removed 'x86_64/lib/sread.o'
-removed 'x86_64/lib/hw.o'
-removed directory 'x86_64/lib/ia64'
-removed 'x86_64/lib/dpath.o'
-removed 'x86_64/lib/str.o'
-removed 'x86_64/lib/pause.o'
-removed 'x86_64/lib/init.o'
-removed 'x86_64/lib/runtime/efirtlib.o'
-removed 'x86_64/lib/runtime/rtdata.o'
-removed 'x86_64/lib/runtime/rtstr.o'
-removed 'x86_64/lib/runtime/rtlock.o'
-removed 'x86_64/lib/runtime/vm.o'
-removed directory 'x86_64/lib/runtime'
-removed 'x86_64/lib/guid.o'
-removed 'x86_64/lib/exit.o'
-removed directory 'x86_64/lib/arm'
-removed 'x86_64/lib/boxdraw.o'
-removed 'x86_64/lib/lock.o'
-removed directory 'x86_64/lib'
 removed directory 'x86_64/'
 make[1]: Leaving directory '/build/shim/gnu-efi'
 make[1]: Entering directory '/build/shim/Cryptlib/OpenSSL'
@@ -2720,13 +1560,13 @@ make[1]: Entering directory '/build/shim/lib'
 rm -f lib.a
 rm -f configtable.o console.o execute.o guid.o print_crypto.o security_policy.o shell.o simple_file.o string.o variables.o
 make[1]: Leaving directory '/build/shim/lib'
-Removing intermediate container 73b04bb417b4
- ---> 1bceaf811f05
+Removing intermediate container 304fa669fd04
+ ---> 416d5395a7e7
 Step 18/30 : RUN setarch linux32 make ARCH=ia32
- ---> Running in a6c24a06c35d
+ ---> Running in 3f6d89fd1827
 sed	-e "s,@@VERSION@@,15.6," \
 	-e "s,@@UNAME@@,Linux i686 unknown unknown GNU/Linux," \
-	-e "s,@@COMMIT@@,505cdb678b319fcf9a7fdee77c0f091b4147cbe5," \
+	-e "s,@@COMMIT@@,5c537b3d0cf8c393dad2e61d49aade68f3af1401," \
 	< /build/shim/version.c.in > version.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m32 -DMDE_CPU_IA32 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/ia32 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubia32.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubia32.efi"' -DEFI_ARCH='L"ia32"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/ia32-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o shim.o shim.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m32 -DMDE_CPU_IA32 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/ia32 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubia32.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubia32.efi"' -DEFI_ARCH='L"ia32"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/ia32-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o globals.o globals.c
@@ -2742,7 +1582,7 @@ gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-
 objcopy --add-section .sbat=/build/shim/data/sbat.csv \
 	--set-section-flags .sbat=contents,alloc,load,readonly,data \
 	sbat_data.o
-objcopy --add-section ".sbat.fixmestick=sbat.fixmestick.csv" sbat_data.o
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m32 -DMDE_CPU_IA32 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/ia32 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubia32.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubia32.efi"' -DEFI_ARCH='L"ia32"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/ia32-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\" -c -o sbat_var.o sbat_var.S
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m32 -DMDE_CPU_IA32 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/ia32 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubia32.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubia32.efi"' -DEFI_ARCH='L"ia32"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/ia32-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o pe.o pe.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m32 -DMDE_CPU_IA32 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/ia32 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubia32.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubia32.efi"' -DEFI_ARCH='L"ia32"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/ia32-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o httpboot.o httpboot.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m32 -DMDE_CPU_IA32 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/ia32 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubia32.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubia32.efi"' -DEFI_ARCH='L"ia32"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/ia32-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o csv.o csv.c
@@ -3295,19 +2135,20 @@ make[2]: Entering directory '/build/shim/gnu-efi/ia32/inc'
 make[2]: Nothing to be done for 'all'.
 make[2]: Leaving directory '/build/shim/gnu-efi/ia32/inc'
 make[1]: Leaving directory '/build/shim/gnu-efi'
-ld -o shimia32.so --hash-style=sysv -nostdlib -znocombreloc -T /build/shim/elf_ia32_efi.lds -shared -Bsymbolic -Lgnu-efi/ia32/gnuefi -Lgnu-efi/ia32/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/ia32/gnuefi/crt0-efi-ia32.o --build-id=sha1  --no-undefined shim.o globals.o mok.o netboot.o cert.o replacements.o tpm.o version.o errlog.o sbat.o sbat_data.o pe.o httpboot.o csv.o load-options.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/ia32/lib/libefi.a gnu-efi/ia32/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/12/libgcc.a lib/lib.a
-[91mld: warning: cert.o: missing .note.GNU-stack section implies executable stack
+ld -o shimia32.so --hash-style=sysv -nostdlib -znocombreloc -T /build/shim/elf_ia32_efi.lds -shared -Bsymbolic -Lgnu-efi/ia32/gnuefi -Lgnu-efi/ia32/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/ia32/gnuefi/crt0-efi-ia32.o --build-id=sha1  --no-undefined shim.o globals.o mok.o netboot.o cert.o replacements.o tpm.o version.o errlog.o sbat.o sbat_data.o sbat_var.o pe.o httpboot.o csv.o load-options.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/ia32/lib/libefi.a gnu-efi/ia32/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/12/libgcc.a lib/lib.a
+[91mld: warning: sbat_var.o: missing .note.GNU-stack section implies executable stack
 ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
 [0mgcc -std=gnu11 -Og -g3 -Wall -Wextra -Wno-missing-field-initializers -Werror -o post-process-pe /build/shim/post-process-pe.c
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
-	-j .vendor_cert -j .sbat \
+	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-ia32 shimia32.so shimia32.efi
 ./post-process-pe -vv shimia32.efi
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
+	-j .sbatlevel \
 	-j .debug_info -j .debug_abbrev -j .debug_aranges \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
@@ -3322,11 +2163,12 @@ ld: NOTE: This behaviour is deprecated and will be removed in a future version o
 [0mobjcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
+	-j .sbatlevel \
 	-j .debug_info -j .debug_abbrev -j .debug_aranges \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
 	mmia32.so mmia32.efi.debug
-[91mobjcopy: [0m[91mmmia32.so: warning: empty loadable segment detected at vaddr=0, is this intentional?
+[91mobjcopy: mmia32.so: warning: empty loadable segment detected at vaddr=0, is this intentional?
 [0mgcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/build/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m32 -DMDE_CPU_IA32 -DPAGE_SIZE=4096 -Werror -nostdinc -I/build/shim/Cryptlib -I/build/shim/Cryptlib/Include -I/build/shim/gnu-efi/inc -I/build/shim/gnu-efi/inc/ia32 -I/build/shim/gnu-efi/inc/protocol -I/build/shim/include -iquote /build/shim -iquote /build/shim -isystem /build/shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -DDEFAULT_LOADER='L"\\\\grubia32.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubia32.efi"' -DEFI_ARCH='L"ia32"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/ia32-15.6/"' -DVENDOR_CERT_FILE=\"fixmestick-codesigning.cer\"   -c -o fallback.o fallback.c
 ld -o fbia32.so --hash-style=sysv -nostdlib -znocombreloc -T /build/shim/elf_ia32_efi.lds -shared -Bsymbolic -Lgnu-efi/ia32/gnuefi -Lgnu-efi/ia32/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/ia32/gnuefi/crt0-efi-ia32.o --build-id=sha1  --no-undefined fallback.o tpm.o errlog.o sbat_data.o globals.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/ia32/lib/libefi.a gnu-efi/ia32/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/12/libgcc.a lib/lib.a
 [91mld: warning: gnu-efi/ia32/gnuefi/crt0-efi-ia32.o: missing .note.GNU-stack section implies executable stack
@@ -3334,79 +2176,80 @@ ld: NOTE: This behaviour is deprecated and will be removed in a future version o
 [0mobjcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
+	-j .sbatlevel \
 	-j .debug_info -j .debug_abbrev -j .debug_aranges \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
 	fbia32.so fbia32.efi.debug
-[91mobjcopy: [0m[91mfbia32.so: warning: empty loadable segment detected at vaddr=0, is this intentional?
+[91mobjcopy: fbia32.so: warning: empty loadable segment detected at vaddr=0, is this intentional?
 [0mobjcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
-	-j .vendor_cert -j .sbat \
+	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-ia32 mmia32.so mmia32.efi
 ./post-process-pe -vv mmia32.efi
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
-	-j .vendor_cert -j .sbat \
+	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-ia32 fbia32.so fbia32.efi
 ./post-process-pe -vv fbia32.efi
-Removing intermediate container a6c24a06c35d
- ---> 00e1566efe7c
+Removing intermediate container 3f6d89fd1827
+ ---> b2d7eff4cf87
 Step 19/30 : RUN mv shimia32.efi /build/target/
- ---> Running in 3d13067c9cc7
-Removing intermediate container 3d13067c9cc7
- ---> 23e6d528dd3f
+ ---> Running in 48eec4c57a3a
+Removing intermediate container 48eec4c57a3a
+ ---> c8892d6376f7
 Step 20/30 : RUN sha256sum /build/target/*
- ---> Running in 2ef9b32b576f
-df0014225da99306ef428b65e227bffc56ac085805de04d6d6a183d52c2672a5  /build/target/shimia32.efi
-92ff5ea0c20f2c9b1d786a000b075265a2c374e9b3d2d7a63fd3acf425794d81  /build/target/shimx64.efi
-Removing intermediate container 2ef9b32b576f
- ---> e199b766ef44
+ ---> Running in 31f9165c6512
+6c69472234368405d63833ecfd3581bbe2abd8de731897d70e0f713dc8d52ee5  /build/target/shimia32.efi
+a3e99e576d8029d41d7502fd484d024ced733aad9d854cbd3203232a1b7b9ff3  /build/target/shimx64.efi
+Removing intermediate container 31f9165c6512
+ ---> b6626c8aa8f0
 Step 21/30 : RUN hexdump -Cv /build/target/shimx64.efi > /build/target/builtx64
- ---> Running in 7dc0e1b29d89
-Removing intermediate container 7dc0e1b29d89
- ---> e2729d0b37bf
+ ---> Running in 9ef7d2bd01d7
+Removing intermediate container 9ef7d2bd01d7
+ ---> a974d055c089
 Step 22/30 : RUN hexdump -Cv /build/target/shimia32.efi > /build/target/builtia32
- ---> Running in 1926c2685062
-Removing intermediate container 1926c2685062
- ---> 97606e9b001a
+ ---> Running in d71ad25f9067
+Removing intermediate container d71ad25f9067
+ ---> a671f66eb48a
 Step 23/30 : RUN hexdump -Cv /build/shim-review/shimx64.efi > origx64
- ---> Running in bed9b0dedc84
-Removing intermediate container bed9b0dedc84
- ---> 8eba3f1fda5b
+ ---> Running in 7da636ef5f1d
+Removing intermediate container 7da636ef5f1d
+ ---> d24562b5a0a0
 Step 24/30 : RUN hexdump -Cv /build/shim-review/shimia32.efi > origia32
- ---> Running in 8ec37823967c
-Removing intermediate container 8ec37823967c
- ---> 5fbc879216a4
+ ---> Running in 83e4565a1cd9
+Removing intermediate container 83e4565a1cd9
+ ---> 22876b3a6ddc
 Step 25/30 : RUN diff -u origx64 /build/target/builtx64
- ---> Running in 8145b911a1e3
-Removing intermediate container 8145b911a1e3
- ---> 454cced7bdfd
+ ---> Running in 9ed666b00e25
+Removing intermediate container 9ed666b00e25
+ ---> 26be7c76c3a7
 Step 26/30 : RUN diff -u origia32 /build/target/builtia32
- ---> Running in 96bff49db84c
-Removing intermediate container 96bff49db84c
- ---> ef4352a23945
+ ---> Running in 096b609670a0
+Removing intermediate container 096b609670a0
+ ---> 173d2525d057
 Step 27/30 : RUN objcopy -j .sbat -O binary /build/target/shimia32.efi /build/target/shimia32.sbat
- ---> Running in 0fa61dc46ddc
-Removing intermediate container 0fa61dc46ddc
- ---> dbd27b3ca3cd
+ ---> Running in f7b20b391039
+Removing intermediate container f7b20b391039
+ ---> e01314ccacf2
 Step 28/30 : RUN objcopy -j .sbat -O binary /build/target/shimx64.efi /build/target/shimx64.sbat
- ---> Running in d532832d67a4
-Removing intermediate container d532832d67a4
- ---> b821f385361c
+ ---> Running in 056347e57d4c
+Removing intermediate container 056347e57d4c
+ ---> 7fa1773b2855
 Step 29/30 : RUN cat /build/target/shimia32.sbat
- ---> Running in 1b503ef78f95
+ ---> Running in 55a5c45bb8ce
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.fixmestick,1,FixMeStick Technologies Inc.,shim,15.6,mail:security@fixmestick.com
-Removing intermediate container 1b503ef78f95
- ---> 174334db30dc
+Removing intermediate container 55a5c45bb8ce
+ ---> 97b44cfc6492
 Step 30/30 : RUN cat /build/target/shimx64.sbat
- ---> Running in dead80ad477d
+ ---> Running in 3703a93d78c2
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.fixmestick,1,FixMeStick Technologies Inc.,shim,15.6,mail:security@fixmestick.com
-Removing intermediate container dead80ad477d
- ---> 9fdcb0dae975
-Successfully built 9fdcb0dae975
+shim.fixmestick,1,FixMeStick Technologies Inc.,shim,15.6.1,mail:security@fixmestick.com
+Removing intermediate container 3703a93d78c2
+ ---> f4ae8928a9f9
+Successfully built f4ae8928a9f9
+Successfully tagged fixmestick-shim-review:latest
