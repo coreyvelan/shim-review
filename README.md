@@ -55,7 +55,7 @@ This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the a
 -------------------------------------------------------------------------------
 Yes- they were created from this commit:
 https://github.com/rhboot/shim/commit/5c537b3d0cf8c393dad2e61d49aade68f3af1401
-The reason it is built from that commit instead of https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2 is because 15.6 has this issue https://github.com/rhboot/shim/issues/498 which is impacting our customers and was fixed by that commit.
+The reason it is built from that commit instead of https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2 is because 15.6 has this issue https://github.com/rhboot/shim/issues/490 which is impacting our customers and was fixed by that commit.
 
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
