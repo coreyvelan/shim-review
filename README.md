@@ -148,8 +148,8 @@ n/a
 -------------------------------------------------------------------------------
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
-df0014225da99306ef428b65e227bffc56ac085805de04d6d6a183d52c2672a5 shimia32.efi
-92ff5ea0c20f2c9b1d786a000b075265a2c374e9b3d2d7a63fd3acf425794d81 shimx64.efi
+6c69472234368405d63833ecfd3581bbe2abd8de731897d70e0f713dc8d52ee5   shimia32.efi
+a3e99e576d8029d41d7502fd484d024ced733aad9d854cbd3203232a1b7b9ff3   shimx64.efi
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
