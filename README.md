@@ -170,7 +170,7 @@ Shim:
 ```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.fixmestick,1,FixMeStick Technologies Inc.,shim,15.6-1,mail:security@fixmestick.com
+shim.fixmestick,1,FixMeStick Technologies Inc.,shim,15.6.1,mail:security@fixmestick.com
 ```
 
 GRUB:
