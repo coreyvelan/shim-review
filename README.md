@@ -34,7 +34,7 @@ FixMeStick employs Secure Boot for building a trusted operating system from Shim
 *******************************************************************************
 ### Why are you unable to reuse shim from another distro that is already signed?
 *******************************************************************************
-We include proprietary drivers- e.g. proprietary kernel ntfs, hfs+, and aps filesystem drivers.  These need to be signed in order to let our customers use them without having to disable secure boot.  We also compile a custom kernel (in order to enable NTFS3_FS, which is not currently enabled in the debian bookworm kernel.
+We include proprietary drivers- e.g. proprietary kernel ntfs, hfs+, and aps filesystem drivers.  These need to be signed in order to let our customers use them without having to disable secure boot.  We also compile a custom kernel (in order to enable NTFS3_FS, which is not currently enabled in the debian bookworm kernel).
 
 *******************************************************************************
 ### Who is the primary contact for security updates, etc.?
@@ -77,7 +77,7 @@ https://github.com/coreyvelan/shim-review/tree/fixmestick-shim-ia32-x64-20230126
 *******************************************************************************
 ### What patches are being applied and why:
 *******************************************************************************
-Required patches 530,531, and 535.
+Required patches 530, 531, and 535.
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
@@ -202,7 +202,7 @@ GRUB: [./grub.sbat.fixmestick.csv](./grub.sbat.fixmestick.csv)
 *******************************************************************************
 ### Which modules are built into your signed grub image?
 *******************************************************************************
-all_video boot btrfs cat chain configfile cpuid cryptodisk echo efifwsetup efinet ext2 f2fs fat font gcry_arcfour gcry_blowfish gcry_camellia gcry_cast5 gcry_crc gcry_des gcry_dsa gcry_idea gcry_md4 gcry_md5 gcry_rfc2268 gcry_rijndael gcry_rmd160 gcry_rsa gcry_seed gcry_serpent gcry_sha1 gcry_sha256 gcry_sha512 gcry_tiger gcry_twofish gcry_whirlpool gettext gfxmenu gfxterm gfxterm_background gzio halt help hfsplus iso9660 jfs jpeg keystatus linux linuxefi loadenv loopback ls lsefi lsefimmap lsefisystab lssal luks lvm mdraid09 mdraid1x memdisk minicmd normal ntfs part_apple part_gpt part_msdos password_pbkdf2 play png probe raid5rec raid6rec reboot regexp search search_fs_file search_fs_uuid search_label sleep squash4 test tftp tpm true video xfs zfs zfscrypt zfsinfo
+all_video boot btrfs cat chain configfile cpuid cryptodisk echo efifwsetup efinet ext2 f2fs fat font gcry_arcfour gcry_blowfish gcry_camellia gcry_cast5 gcry_crc gcry_des gcry_dsa gcry_idea gcry_md4 gcry_md5 gcry_rfc2268 gcry_rijndael gcry_rmd160 gcry_rsa gcry_seed gcry_serpent gcry_sha1 gcry_sha256 gcry_sha512 gcry_tiger gcry_twofish gcry_whirlpool gettext gfxmenu gfxterm gfxterm_background gzio halt help hfsplus iso9660 jfs jpeg keystatus linux linuxefi loadenv loopback ls lsefi lsefimmap lsefisystab lssal luks lvm mdraid09 mdraid1x memdisk minicmd normal ntfs ntfs3 part_apple part_gpt part_msdos password_pbkdf2 play png probe raid5rec raid6rec reboot regexp search search_fs_file search_fs_uuid search_label sleep squash4 test tftp tpm true video xfs zfs zfscrypt zfsinfo
 
 *******************************************************************************
 ### What is the origin and full version number of your bootloader (GRUB or other)?
