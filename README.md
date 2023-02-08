@@ -172,8 +172,8 @@ The last shim we had signed was 15.6.  This one is 15.7 with patches 530, 531, a
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-b28d0ddfeafb068acc1eb51f496623dc0929da58660b4a3a7b5806b0b28ecbb5  /build/target/shimx64.efi
-39c9bf03c09679834c34c25582a4c52d4906c099b65b6b8bf0f14215adeb26ba  /build/target/shimia32.efi
+e1dd42b83626c2050587c3233bd094bdf55922ab1bf5f306fa6b1dad6629896f  /build/target/shimx64.efi
+21ca841e983028d04cc10ca42f7da720a3abc8a21d0f5c0a87ea9480c4a1d624  /build/target/shimia32.efi
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
@@ -194,7 +194,7 @@ Shim:
 ```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,3,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.fixmestick,3,FixMeStick Technologies Inc.,shim,15.7-0,mail:security@fixmestick.com
+shim.fixmestick,1,FixMeStick Technologies Inc.,shim,15.7-0,mail:security@fixmestick.com
 ```
 
 GRUB: [./grub.sbat.fixmestick.csv](./grub.sbat.fixmestick.csv)
